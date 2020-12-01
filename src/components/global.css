@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #333;
+  height: 100vh;
+}
+
+body {
+  background: url("/construcao-bg.jpg") center center no-repeat;
+  background-size: cover;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.logo {
+  width: 320px;
+  max-width: 90%;
+  background: rgba(256, 256, 256, 0.9);
+  padding: 20px 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo p {
+  text-align: center;
+  font-size: 17px;
+}
