@@ -7,7 +7,7 @@
 module.exports = {
   siteMetadata: {
     title: `Curta Floripa`,
-    description: `Aproveite o melhor da ilha da magia!`,
+    description: `Aproveite o melhor da Ilha da Magia!`,
     author: `@adrianopulz`,
   },
   plugins: [
@@ -21,6 +21,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
