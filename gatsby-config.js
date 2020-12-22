@@ -15,8 +15,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `assets`,
+        path: `${__dirname}/src/assets`,
       },
     },
     {
@@ -40,7 +40,7 @@ module.exports = {
         background_color: `#113c4a`,
         theme_color: `#3f7b70`,
         display: `minimal-ui`,
-        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/icon.png`, // This path is relative to the root of the site.
       },
     },
   ],

@@ -1,14 +1,12 @@
 import React from "react"
-import Logo from "../components/Logo"
-import "../components/global.css"
+import Logo from "../assets/svgs/logo.svg"
+import "../global.css"
 
 export default function Home() {
   return (
-    <div>
-      <div className={"logo"}>
-        <Logo />
-        <p>Em Construção.</p>
-      </div>
+    <div className={"logo"}>
+      <img src={Logo} alt="Curta Floripa" />
+      <p>Em Construção.</p>
     </div>
   )
 }
