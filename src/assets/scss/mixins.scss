@@ -1,0 +1,18 @@
+@import "media-queries";
+
+@mixin center {
+  width: 302px;
+  margin: 0 auto;
+
+  @include smallUp {
+    width: 720px;
+  }
+
+  @include mediumUp {
+    width: 980px;
+  }
+
+  @include largeUp {
+    width: 1088px;
+  }
+}

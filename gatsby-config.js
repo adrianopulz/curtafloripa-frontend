@@ -7,11 +7,20 @@
 module.exports = {
   siteMetadata: {
     title: `Curta Floripa`,
-    description: `Aproveite o melhor da Ilha da Magia!`,
+    description: `Aproveite tudo que a Ilha da Magia tem para oferecer.`,
     author: `@adrianopulz`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        implementation: require("sass"),
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -23,14 +32,19 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Montserrat\:300,400,700`
+          `Montserrat\:300,400,500,600,700`,
+          `Handlee`
         ],
         display: 'swap'
       }
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-drupal`,
+      options: {
+        baseUrl: `http://curta-floripa.lndo.site/`,
+        apiBase: `api`,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

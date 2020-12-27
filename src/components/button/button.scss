@@ -1,0 +1,21 @@
+@import "../../assets/scss/media-queries";
+
+.btn {
+  background: $thirdColor;
+  color: $whiteColor;
+  display: inline-block;
+  height: 50px;
+  min-width: 290px;
+  padding: 0 20px;
+  font-weight: $lightWeight;
+  line-height: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 21px;
+  border-radius: 21px;
+
+  &:hover {
+    color: $whiteColor;
+    background: $secondaryColor;
+  }
+}
