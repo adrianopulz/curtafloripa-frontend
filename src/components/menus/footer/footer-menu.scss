@@ -1,0 +1,25 @@
+@import "../../../assets/scss/media-queries";
+
+#footer-menu {
+  ul {
+    @include smallUp {
+      width: 420px;
+    }
+
+    @include mediumUp {
+      width: 535px;
+    }
+  }
+
+  li {
+    font-size: 15px;
+
+    a {
+      color: $whiteColor;
+
+      &:hover {
+        color: $darkColor;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import "../../../assets/scss/media-queries";
+@import "../../../assets/scss/mixins";
+
+#header {
+  position: absolute;
+  z-index: 99999;
+  width: 100%;
+  height: 200px;
+  background-image: linear-gradient(180deg, rgba(256, 256, 256, .85), rgba(256, 256, 256, 0));
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+}

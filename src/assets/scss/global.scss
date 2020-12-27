@@ -1,0 +1,58 @@
+@import "media-queries";
+@import "mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #FFF;
+}
+
+body {
+  font-family: $primaryFont;
+  font-size: 17px;
+  font-weight: $regularWeight;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $featuredFont;
+  line-height: 1.2em;
+}
+
+h2 {
+  font-size: 79px;
+  color: $whiteColor;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: $thirdColor;
+
+  &:hover {
+    color: $primaryColor;
+  }
+}
+
+.container {
+  @include center;
+}
+
+#main {
+  min-height: calc(100vh - 420px - 80px);
+  overflow: auto;
+}

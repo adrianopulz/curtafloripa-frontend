@@ -1,0 +1,20 @@
+@import "../../../assets/scss/media-queries";
+
+#main-menu {
+  ul {
+    height: 70px;
+    margin: 30px 0;
+
+    @include smallUp {
+      width: 420px;
+    }
+
+    @include mediumUp {
+      width: 535px;
+    }
+
+    li {
+      font-size: 21px;
+    }
+  }
+}

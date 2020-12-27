@@ -1,0 +1,31 @@
+@import "variables";
+
+@mixin tinyUp {
+  @media (min-width: $tiny) {
+    @content;
+  }
+}
+
+@mixin smallUp {
+  @media (min-width: $small) {
+    @content;
+  }
+}
+
+@mixin mediumUp {
+  @media (min-width: $medium) {
+    @content;
+  }
+}
+
+@mixin largeUp {
+  @media (min-width: $large) {
+    @content;
+  }
+}
+
+@mixin wideUp {
+  @media (min-width: $wide) {
+    @content;
+  }
+}
