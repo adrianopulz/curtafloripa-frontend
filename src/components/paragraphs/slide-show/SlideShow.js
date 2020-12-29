@@ -3,11 +3,14 @@ import { graphql } from 'gatsby'
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 
+// Custom Components
 import SlideShowItem from "../slide-show-item/SlideShowItem"
 
+// Styles
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import './slide-show.scss';
 
+// Map each Slide Item.
 const slideItem = data => {
   return (
     <SplideSlide key={ data.id } className={"slide-item"}>
