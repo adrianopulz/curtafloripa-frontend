@@ -32,7 +32,7 @@ export default ({ data }) => {
         <div className={"text"} dangerouslySetInnerHTML={{
           __html: data.field_html_text.value
         }} />
-        <Button path={ data.field_link.uri } value={ data.field_link.title } />
+        <Button path={ "/praias" } value={ data.field_link.title } />
       </div>
     </article>
   );

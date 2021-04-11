@@ -3,20 +3,20 @@ import { Link } from "gatsby"
 
 import "../menu.scss"
 import "./main.scss";
-import { classNames } from "@splidejs/react-splide/src/js/utils"
+
 
 export default () => {
   const [menuStatus, setMenuStatus] = useState(false);
+  let classes = "menu";
 
-  const navClasses = classNames({
-    'menu': true,
-    'opened': menuStatus
-  });
+  if (menuStatus) {
+    classes += " opened";
+  }
 
   return (
     <>
       <button id={"hamburger"} onClick={ () => setMenuStatus(true) }><i>MENU</i></button>
-      <nav className={ navClasses } id={"main-menu"}>
+      <nav className={ classes } id={"main-menu"}>
         <button id={"closeMenu"} onClick={ () => setMenuStatus(false) }>X</button>
         <ul>
           <li><Link to="/">Home</Link></li>

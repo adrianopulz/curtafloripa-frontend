@@ -1,5 +1,5 @@
 import React from "react";
-import { SlideShow } from "./slide-show/SlideShow";
+import SlideShow from "./slide-show/SlideShow";
 
 const components = {
   paragraph__slide_show: SlideShow

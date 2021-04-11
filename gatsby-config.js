@@ -29,14 +29,21 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
-          `Montserrat\:300,400,500,600,700`,
-          `Handlee`
-        ],
-        display: 'swap'
-      }
+        fonts: {
+          google: [
+            {
+              family: "Handlee",
+            },
+            {
+              family: "Montserrat",
+              variants: ["300", "400", "500", "600", "700"],
+            },
+          ],
+        },
+        usePreload: false,
+      },
     },
     {
       resolve: `gatsby-source-drupal`,

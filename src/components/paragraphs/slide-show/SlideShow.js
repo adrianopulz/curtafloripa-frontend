@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { graphql } from 'gatsby'
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
@@ -19,18 +19,28 @@ const slideItem = data => {
   );
 }
 
-export const SlideShow = ({ node }) => {
-  const slides = node.relationships.field_slide_items.map(slideItem);
+export default ({ node }) => {
+  const [slideShow, loadSlideShow] = useState(null);
+
+  // Using DidMount to avoid conflicts with Splide Lib.
+  useEffect(() => {
+    const slides = node.relationships.field_slide_items.map(slideItem);
+
+    // Updating data that depends of window property.
+    loadSlideShow(
+      <Splide className={"slide-show"} options={
+        {
+          type: 'fade',
+          rewind: true
+        }
+      }>
+        { slides }
+      </Splide>
+    );
+  }, []);
 
   return (
-    <Splide
-      options={ {
-        type: 'fade',
-        rewind: true
-      } }
-      className={"slide-show"}>
-      { slides }
-    </Splide>
+    slideShow
   );
 }
 
