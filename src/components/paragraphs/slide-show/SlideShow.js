@@ -22,7 +22,7 @@ const slideItem = data => {
 export default ({ node }) => {
   const [slideShow, loadSlideShow] = useState(null);
 
-  // Using DidMount to avoid conflicts with Splide Lib.
+  // Using DidMount to avoid conflicts with SplideJs Lib.
   useEffect(() => {
     const slides = node.relationships.field_slide_items.map(slideItem);
 
