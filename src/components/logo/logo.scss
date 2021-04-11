@@ -4,13 +4,12 @@ figure.logo {
   padding: 0;
   margin: 15px 0 0 0;
 
-
-
   @include mediumUp {
     margin: 30px 0;
   }
 
   img {
+    width: auto;
     height: 42px;
 
     @include mediumUp {
