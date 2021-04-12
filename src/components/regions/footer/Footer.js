@@ -4,7 +4,7 @@ import FooterMenu from "../../menus/footer/FooterMenu"
 
 import "./footer.scss";
 
-export default () => {
+const Footer = () => {
   return (
     <footer id={"footer"}>
       <div className={"container"}>
@@ -14,3 +14,5 @@ export default () => {
     </footer>
   );
 }
+
+export default Footer;

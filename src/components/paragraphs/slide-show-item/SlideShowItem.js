@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Button from "../../button/Button";
 
-export default ({ data }) => {
+const SlideShowItem = ({ data }) => {
   // Update the Media Match value.
   const mediaHandler = e => {
     setMatch(e.matches);
@@ -37,3 +37,5 @@ export default ({ data }) => {
     </article>
   );
 }
+
+export default SlideShowItem;

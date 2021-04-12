@@ -5,7 +5,7 @@ import MainNav from "../../menus/main/Main";
 
 import "./header.scss";
 
-export default () => {
+const Hero = () => {
   return (
     <header id={"header"}>
       <div className={"container"}>
@@ -15,3 +15,5 @@ export default () => {
     </header>
   );
 }
+
+export default Hero;

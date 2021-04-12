@@ -3,8 +3,10 @@ import { Link } from "gatsby"
 
 import "./button.scss";
 
-export default ( {path, value} ) => {
+const Button = ( {path, value} ) => {
   return (
     <Link className={"btn"} to={ path }>{ value }</Link>
   );
 }
+
+export default Button;

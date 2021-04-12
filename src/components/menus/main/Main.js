@@ -5,7 +5,7 @@ import "../menu.scss"
 import "./main.scss";
 
 
-export default () => {
+const MainMenu = () => {
   const [menuStatus, setMenuStatus] = useState(false);
   let classes = "menu";
 
@@ -28,3 +28,5 @@ export default () => {
     </>
   );
 }
+
+export default MainMenu;

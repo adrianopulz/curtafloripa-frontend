@@ -3,7 +3,7 @@ import Header from "../components/regions/header/Header"
 import Footer from "../components/regions/footer/Footer"
 import TitleHero from "../components/paragraphs/hero/TitleHero"
 
-export default () => {
+const Beaches = () => {
   return (
     <div>
       <Header />
@@ -15,3 +15,5 @@ export default () => {
     </div>
   );
 }
+
+export default Beaches;

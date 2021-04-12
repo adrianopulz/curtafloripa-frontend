@@ -1,7 +1,9 @@
 import React from "react"
 
-export default () => {
+const NotFoundPage = () => {
   return (
     <h1>Oops!</h1>
   )
 }
+
+export default NotFoundPage;

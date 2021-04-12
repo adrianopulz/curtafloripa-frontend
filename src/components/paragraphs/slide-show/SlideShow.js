@@ -19,7 +19,7 @@ const slideItem = data => {
   );
 }
 
-export default ({ node }) => {
+const SlideShow = ({ node }) => {
   const [slideShow, loadSlideShow] = useState(null);
 
   // Using DidMount to avoid conflicts with SplideJs Lib.
@@ -43,6 +43,8 @@ export default ({ node }) => {
     slideShow
   );
 }
+
+export default SlideShow;
 
 export const fragment = graphql`
   fragment ParagraphSlideShow on paragraph__slide_show {

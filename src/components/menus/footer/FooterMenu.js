@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import "../menu.scss"
 import "./footer-menu.scss";
 
-export default () => {
+const FooterMenu = () => {
   return (
     <nav className={"menu"} id={"footer-menu"}>
       <ul>
@@ -17,3 +17,5 @@ export default () => {
     </nav>
   );
 }
+
+export default FooterMenu;

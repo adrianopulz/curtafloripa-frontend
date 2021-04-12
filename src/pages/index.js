@@ -7,7 +7,7 @@ import { getParagraph } from "../components/paragraphs/ParagraphHelper";
 
 import "../assets/scss/global.scss"
 
-export default function Home( { data } ) {
+const Home = ( { data } ) => {
   const paragraphs = data.page.relationships.paragraphs.map(getParagraph);
 
   return (
@@ -41,3 +41,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default Home;
