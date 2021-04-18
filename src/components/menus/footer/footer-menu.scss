@@ -12,7 +12,13 @@
   }
 
   li {
-    font-size: 15px;
+    font-size: 21px;
+    line-height: 1.6em;
+
+    @include smallUp {
+      font-size: 15px;
+      line-height: 1.1em;
+    }
 
     a {
       color: $whiteColor;

@@ -2,19 +2,34 @@
 
 #footer {
   background: $primaryColor;
-  height: 80px;
+  padding: 25px 0;
   display: flex;
   align-items: center;
 
+  @include smallUp {
+    padding: 0;
+    height: 80px;
+  }
+
   .copyright {
     color: $whiteColor;
-    margin: 0;
+    margin: 30px 0 0 0;
 
+    @include smallUp {
+      margin: 0;
+    }
   }
 
   .container {
     display: flex;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: space-between;
+
+    @include smallUp {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 }

@@ -23,11 +23,34 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: $featuredFont;
   line-height: 1.2em;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 55px;
+  color: $whiteColor;
+
+  @include smallUp {
+    font-size: 79px;
+  }
 }
 
 h2 {
-  font-size: 79px;
+  font-size: 33px;
   color: $whiteColor;
+
+  @include mediumUp {
+    font-size: 59px;
+  }
+}
+
+h3 {
+  font-size: 27px;
+  font-weight: 400;
+
+  @include mediumUp {
+    font-size: 33px;
+  }
 }
 
 ul {
@@ -53,6 +76,9 @@ a {
 }
 
 #main {
-  min-height: calc(100vh - 420px - 80px);
   overflow: auto;
+}
+
+.main-content {
+  padding: 60px 0 110px;
 }
