@@ -21,7 +21,7 @@ const Home = ( { data } ) => {
       </Helmet>
 
       <Header />
-      <main id={"main"}>
+      <main id={"main"} className="home-page">
         { paragraphs }
       </main>
     </div>
