@@ -5,7 +5,7 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import "./card.scss";
 
 const Card = ( {node} ) => {
-  const path = node.path.alias;
+  const path = (node.path.alias) ? node.path.alias : `/praia/praia-${node.drupal_internal__nid}`;
   const image = getImage(node.relationships.field_single_image.relationships.field_media_image.localFile.childImageSharp);
   const alt = node.relationships.field_single_image.field_media_image.alt;
 

@@ -48,6 +48,7 @@ export const query = graphql`
       edges {
         node {
           id
+          drupal_internal__nid
           title
           path {
             alias
