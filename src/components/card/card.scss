@@ -1,0 +1,76 @@
+@import "../../assets/scss/media-queries";
+
+.cards-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include smallUp {
+    flex-direction: row;
+    margin: 0 -8px;
+  }
+}
+
+.cards-item {
+  max-width: 352px;
+  margin: 8px 0;
+  cursor: pointer;
+
+  @include smallUp {
+    width: auto;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 8px;
+  }
+
+  @include mediumUp {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+    padding: 0 8px;
+  }
+
+  &:hover {
+    img {
+      -moz-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+
+    h3 {
+      background: $primaryColor;
+    }
+  }
+
+  a {
+    color: $whiteColor;
+    text-decoration: none;
+    display: block;
+  }
+
+  .gatsby-image-wrapper {
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+
+    img {
+      -moz-transition: all .5s;
+      -webkit-transition: all .5s;
+      transition: all .5s;
+    }
+  }
+
+  .image {
+    line-height: 0;
+  }
+
+  h3 {
+    text-align: center;
+    height: 60px;
+    margin: 0;
+    background: $secondaryColor;
+    line-height: 60px;
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+  }
+}
