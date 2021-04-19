@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { StaticImage, getImage, GatsbyImage  } from "gatsby-plugin-image"
+import { getImage, GatsbyImage  } from "gatsby-plugin-image"
 
 import Header from "../components/regions/header/Header"
 import Footer from "../components/regions/footer/Footer"
