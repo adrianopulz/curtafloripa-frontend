@@ -14,7 +14,9 @@ html, body {
 
 body {
   font-family: $primaryFont;
-  font-size: 17px;
+  font-size: 19px;
+  line-height: 1.5em;
+  color: $darkColor;
   font-weight: $regularWeight;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -24,6 +26,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $featuredFont;
   line-height: 1.2em;
   font-weight: 700;
+  margin: 0;
 }
 
 h1 {
@@ -36,20 +39,20 @@ h1 {
 }
 
 h2 {
-  font-size: 33px;
-  color: $whiteColor;
+  font-size: 29px;
+  color: $secondaryColor;
 
   @include mediumUp {
-    font-size: 59px;
+    font-size: 45px;
   }
 }
 
 h3 {
-  font-size: 27px;
+  font-size: 23px;
   font-weight: 400;
 
   @include mediumUp {
-    font-size: 33px;
+    font-size: 29px;
   }
 }
 
