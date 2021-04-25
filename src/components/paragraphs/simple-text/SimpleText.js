@@ -5,7 +5,7 @@ const SimpleText = data => {
   const node = data.node;
 
   return (
-    <div className="simple-text" dangerouslySetInnerHTML={{ __html: node.copy.processed }} />
+    <article className="simple-text" dangerouslySetInnerHTML={{ __html: node.copy.processed }} />
   );
 }
 
