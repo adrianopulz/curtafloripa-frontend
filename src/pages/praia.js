@@ -65,6 +65,7 @@ export const query = graphql`
           type: __typename
           ...ParagraphSimpleText
           ...ParagraphImage
+          ...ParagraphSideBySide
         }
       }
     }

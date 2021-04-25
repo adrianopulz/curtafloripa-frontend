@@ -1,12 +1,14 @@
 import React from "react";
 import SlideShow from "./slide-show/SlideShow";
 import SimpleText from "./simple-text/SimpleText";
-import ParagraphImage from "./image/Image";
+import Image from "./image/Image";
+import SideBySide from "./side-by-side/SideBySide";
 
 const components = {
   paragraph__slide_show: SlideShow,
   paragraph__simple_text: SimpleText,
-  paragraph__image: ParagraphImage
+  paragraph__image: Image,
+  paragraph__featured_side_by_side: SideBySide
 };
 
 export const getParagraph = node => {
