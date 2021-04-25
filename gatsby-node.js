@@ -46,8 +46,6 @@ exports.createPages = async ({ graphql, actions }) => {
       path: slug,
       component: path.resolve(`./src/pages/praia.js`),
       context: {
-        // Data passed to context is available
-        // in page queries as GraphQL variables.
         id: node.id,
       },
     })
