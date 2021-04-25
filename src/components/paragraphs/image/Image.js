@@ -2,6 +2,8 @@ import React from "react"
 import { graphql } from 'gatsby'
 import { getImage, GatsbyImage  } from "gatsby-plugin-image"
 
+import "./image.scss";
+
 const SimpleText = data => {
   const node = data.node;
   const image = getImage(node.relationships.image.value.media.file.childImageSharp);
