@@ -56,7 +56,8 @@ typings/
 
 # gatsby files
 .cache/
-public
+# Since the Drupal code will runs only locally, the public folder should be allowed.
+#public
 
 # Mac files
 .DS_Store
