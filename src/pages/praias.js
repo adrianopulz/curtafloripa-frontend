@@ -7,6 +7,7 @@ import Footer from "../components/regions/footer/Footer"
 import TitleHero from "../components/paragraphs/hero/TitleHero"
 import BeachesList from "../components/views/beaches/BeachesList"
 import NoResults from "../components/messages/no-results/NoResults"
+import Seo from "../components/seo"
 
 const Beaches = ({ data }) => {
 
@@ -25,6 +26,7 @@ const Beaches = ({ data }) => {
 
   return (
     <>
+      <Seo title="Praias" article={false} />
       <Header />
       <main id="main" className="beaches-page">
         <TitleHero title="Praias" image={heroImage} />
