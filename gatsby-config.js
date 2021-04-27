@@ -7,7 +7,11 @@
 module.exports = {
   siteMetadata: {
     title: `Curta Floripa`,
-    description: `Aproveite tudo que a Ilha da Magia tem para oferecer.`,
+    titleTemplate: "%s | Curta Floripa",
+    description: "Tudo que você precisa saber sobre a Ilha da Magia. As melhores paraias e trilhas estão aqui, encontre o que procura de forma fácil e organize suas férias para não perder nada.",
+    url: "https://www.curtafloripa.com.br",
+    image: "/images/default.jpg",
+    twitterUsername: "@adrianopulz",
     author: `@adrianopulz`,
   },
   plugins: [
