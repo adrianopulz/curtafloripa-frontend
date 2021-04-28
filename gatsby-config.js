@@ -4,12 +4,21 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
+const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+console.log(`Using environment config: '${activeEnv}'`)
+
+const domain = {
+  'production': 'https://www.curtafloripa.com.br',
+  'development': 'http://localhost:8000',
+  'staging': 'https://develop--curtafloripa.netlify.app'
+}
+
 module.exports = {
   siteMetadata: {
     title: `Curta Floripa`,
     titleTemplate: "%s | Curta Floripa",
     description: "Tudo que você precisa saber sobre a Ilha da Magia. As melhores paraias e trilhas estão aqui, encontre o que procura de forma fácil e organize suas férias para não perder nada.",
-    url: "https://www.curtafloripa.com.br",
+    url: domain[activeEnv],
     image: "/images/default.jpg",
     twitterUsername: "@adrianopulz",
     author: `@adrianopulz`,
