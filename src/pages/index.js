@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from 'gatsby'
 
 import Seo from "../components/seo";
-import Header from "../components/regions/header/Header";
+import HeaderHome from "../components/regions/header/HeaderHome";
 import { getParagraph } from "../components/paragraphs/ParagraphHelper";
 
 import "../assets/scss/global.scss"
@@ -11,13 +11,13 @@ const Home = ( { data } ) => {
   const paragraphs = data.page.relationships.paragraphs.map(getParagraph);
 
   return (
-    <div>
-      <Seo title="Home" article={false} />
-      <Header />
+    <>
+      <Seo title="Home" article={false} bodyClass={"home-page"} />
+      <HeaderHome />
       <main id={"main"} className="home-page">
         { paragraphs }
       </main>
-    </div>
+    </>
   )
 };
 

@@ -1,16 +1,45 @@
 @import "../../../assets/scss/media-queries";
-@import "../../../assets/scss/mixins";
 
-#header {
+.header {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+#header-home {
   position: absolute;
   z-index: 99999;
   width: 100%;
-  height: 200px;
+  height: 70px;
 
-  .container {
-    @include smallUp {
-      display: flex;
-      justify-content: space-between;
+  @include mediumUp {
+    height: 130px;
+  }
+
+  figure.logo {
+    padding: 0;
+    margin: 0;
+
+    img {
+      width: auto;
+      height: 42px;
+
+      @include mediumUp {
+        height: 70px;
+      }
     }
+  }
+}
+
+#header {
+  height: 62px;
+  border-bottom: 2px solid $primaryColor;
+  position: relative;
+
+  @include mediumUp {
+    height: 82px;
   }
 }

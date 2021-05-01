@@ -9,7 +9,8 @@
   border-bottom: 3px solid $thirdColor;
   padding: 0;
   position: absolute;
-  top: 25px;
+  top: 50%;
+  transform: translateY(-50%);
   right: 25px;
   color: transparent;
   font-size: 0;
@@ -65,18 +66,12 @@
   }
 
   @include smallUp {
-    width: 460px;
-    height: 42px;
     position: static;
-    margin: 15px 0;
+    width: 70%;
+    max-width: 580px;
+    height: auto;
     background: none;
     display: block;
-  }
-
-  @include mediumUp {
-    width: 535px;
-    height: 70px;
-    margin: 30px 0;
   }
 
   ul {
@@ -87,12 +82,7 @@
 
     @include smallUp {
       text-align: left;
-      height: 42px;
-      width: auto;
-    }
-
-    @include mediumUp {
-      height: 70px;
+      height: auto;
     }
 
     li {
