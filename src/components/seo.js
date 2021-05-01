@@ -26,9 +26,9 @@ const SEO = ({ title, description, image, article }) => {
 
   return (
     <Helmet htmlAttributes={{ lang: 'pt' }} title={seo.title} titleTemplate={titleTemplate}>
-      <link rel="canonical" href={siteUrl} />
+      <link rel="canonical" href={seo.url} />
       <meta name="description" content={seo.description} />
-      <meta name="keywords" content="floripa, florianopolis, ilha, magia, praia, trilha, litoral, sul, brasil" />
+      <meta name="keywords" content="floripa, florianopolis, ilha, magia, praia, trilha, litoral, sul, brasil, canas, canasvieiras, jurere, brava, joaquina, campeche, ingleses, barra da lagoa, mole, pantano do sul, praia do forte, daniela" />
       <meta name="image" content={seo.image} />
 
       {(article ? true : null) && <meta property="og:type" content="article" />}
