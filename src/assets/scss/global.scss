@@ -34,7 +34,7 @@ h1 {
   color: $whiteColor;
 
   @include smallUp {
-    font-size: 79px;
+    font-size: 97px;
   }
 }
 
@@ -83,5 +83,5 @@ a {
 }
 
 .main-content {
-  padding: 60px 0 110px;
+  padding: 0 0 100px;
 }

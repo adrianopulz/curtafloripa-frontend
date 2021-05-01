@@ -8,6 +8,7 @@ import TitleHero from "../components/paragraphs/hero/TitleHero"
 import BeachesList from "../components/views/beaches/BeachesList"
 import NoResults from "../components/messages/no-results/NoResults"
 import Seo from "../components/seo"
+import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 
 const Beaches = ({ data }) => {
 
@@ -24,6 +25,12 @@ const Beaches = ({ data }) => {
     quality={100}
   />;
 
+  const breadcrumbLinks = [
+    {
+      'value': 'Praias'
+    }
+  ];
+
   return (
     <>
       <Seo title="Praias" article={false} />
@@ -32,6 +39,7 @@ const Beaches = ({ data }) => {
         <TitleHero title="Praias" image={heroImage} />
         <section className="main-content">
           <div className={"container"}>
+            <Breadcrumb links={breadcrumbLinks} />
             { nodes.length
               ? <BeachesList items={nodes} />
               : <NoResults />

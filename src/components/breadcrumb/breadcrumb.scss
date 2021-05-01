@@ -1,0 +1,57 @@
+@import "../../assets/scss/media-queries";
+
+.breadcrumb {
+  margin: 15px 0 45px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    color: #666;
+    font-weight: 500;
+
+    li {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      text-transform: uppercase;
+      line-height: 1.1em;
+
+      &:first-child {
+        flex: 0 0 100%;
+        margin-bottom: 7px;
+        margin-right: 10px;
+        font-size: 15px;
+        color: $darkColor;
+        font-weight: $semiBoldWeight;
+        text-transform: none;
+
+        @include smallUp {
+          flex: none;
+          margin-bottom: 0;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: $primaryColor;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      svg {
+        fill: $darkColor;
+        height: 9px;
+        margin: 0 5px;
+
+        @include smallUp {
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}

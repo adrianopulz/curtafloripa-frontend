@@ -5,8 +5,9 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import Header from "../components/regions/header/Header"
 import Footer from "../components/regions/footer/Footer"
 import TitleHero from "../components/paragraphs/hero/TitleHero"
-import { getParagraph } from "../components/paragraphs/ParagraphHelper";
+import { getParagraph } from "../components/paragraphs/ParagraphHelper"
 import Seo from "../components/seo"
+import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 
 const Beach = ({ data }) => {
   // The page node Object.
@@ -17,6 +18,15 @@ const Beach = ({ data }) => {
   const alt = node.relationships.field_single_image.field_media_image.alt;
   const heroImage = <GatsbyImage alt={alt} image={image} className="cover-image" objectFit="cover" />;
   const paragraphs = node.relationships.paragraphs.map(getParagraph);
+  const breadcrumbLinks = [
+    {
+      'value': 'Praias',
+      'link': '/praias'
+    },
+    {
+      'value': node.title
+    }
+  ];
 
   return (
     <>
@@ -27,6 +37,7 @@ const Beach = ({ data }) => {
 
         <section className="main-content">
           <div className={"container"}>
+            <Breadcrumb links={breadcrumbLinks} />
             { paragraphs }
           </div>
         </section>
