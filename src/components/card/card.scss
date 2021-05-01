@@ -38,7 +38,7 @@
       transform: scale(1.1);
     }
 
-    h3 {
+    h2 {
       background: $primaryColor;
     }
   }
@@ -64,7 +64,9 @@
     line-height: 0;
   }
 
-  h3 {
+  h2 {
+    font-size: 23px;
+    color: $secondaryColor;
     text-align: center;
     height: 60px;
     margin: 0;
@@ -72,5 +74,9 @@
     line-height: 60px;
     border-bottom-left-radius: 13px;
     border-bottom-right-radius: 13px;
+
+    @include mediumUp {
+      font-size: 31px;
+    }
   }
 }

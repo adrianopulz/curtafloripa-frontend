@@ -13,7 +13,7 @@ const Card = ( {node} ) => {
     <Link to={path} className="image">
       <GatsbyImage alt={alt} image={image} />
     </Link>
-    <h3><Link to={path}>{node.title}</Link></h3>
+    <h2><Link to={path}>{node.title}</Link></h2>
   </article>;
 };
 
