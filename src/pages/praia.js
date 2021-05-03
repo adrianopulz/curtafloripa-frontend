@@ -30,7 +30,7 @@ const Beach = ({ data }) => {
 
   return (
     <>
-      <Seo title={node.title} image={childImageSharp.resize.src} article={true} />
+      <Seo title={node.title} description={node.seo_desc} image={childImageSharp.resize.src} article={true} />
       <Header />
       <main id="main" className="beaches-page">
         <TitleHero title={node.title} image={heroImage} />
@@ -52,6 +52,7 @@ export const query = graphql`
     nodeBeach(id: {eq: $id}) {
       id
       title
+      seo_desc: field_seo_short_description
       relationships {
         field_tags {
           name
