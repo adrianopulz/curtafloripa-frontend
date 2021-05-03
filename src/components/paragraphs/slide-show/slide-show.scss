@@ -1,19 +1,24 @@
 @import "../../../assets/scss/media-queries";
 
 .splide__pagination {
+  display: none;
   bottom: 30px;
+
+  @include mediumUp {
+    display: flex;
+  }
 
   li {
     button {
-      width: 15px;
-      height: 15px;
+      width: 20px;
+      height: 20px;
       background: $thirdColor;
       opacity: 1;
-      margin: 0 4px;
+      margin: 0 10px;
 
       &.is-active {
-        width: 15px;
-        height: 15px;
+        width: 25px;
+        height: 25px;
         background: $whiteColor;
         transform: none;
       }
@@ -24,25 +29,50 @@
 .splide__arrow {
   border-radius: 0;
   background: none;
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
+  top: auto;
+  transform: none;
+  bottom: 30px;
   opacity: 1;
-  display: none;
 
   @include mediumUp {
-    display: block;
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   &:hover {
     svg {
-      fill: $whiteColor;
+      fill: $thirdColor;
     }
   }
 
   svg {
-    width: 50px;
-    height: 50px;
-    fill: $thirdColor;
+    width: 100%;
+    height: auto;
+    fill: $whiteColor;
+  }
+}
+
+.splide__arrow--prev {
+  left: 50%;
+  margin-left: -90px;
+
+  @include mediumUp {
+    left: 50px;
+    margin-left: auto;
+  }
+}
+
+.splide__arrow--next {
+  right: 50%;
+  margin-right: -90px;
+
+  @include mediumUp {
+    right: 50px;
+    margin-right: auto;
   }
 }
 
@@ -54,6 +84,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  .slide-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+  }
 
   @include mediumUp {
     align-items: flex-end;

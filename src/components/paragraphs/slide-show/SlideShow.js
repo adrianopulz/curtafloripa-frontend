@@ -71,7 +71,9 @@ export const fragment = graphql`
             relationships {
               field_media_image {
                 localFile {
-                  publicURL
+                  childImageSharp {
+                    gatsbyImageData(layout: FULL_WIDTH, quality: 100, placeholder: TRACED_SVG)
+                  }
                 }
               }
             }
@@ -85,7 +87,9 @@ export const fragment = graphql`
             relationships {
               field_media_image {
                 localFile {
-                  publicURL
+                  childImageSharp {
+                    gatsbyImageData(layout: FULL_WIDTH, quality: 100, placeholder: TRACED_SVG)
+                  }
                 }
               }
             }
