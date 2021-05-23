@@ -4,7 +4,7 @@ import { getImage, GatsbyImage  } from "gatsby-plugin-image"
 
 import "./image.scss";
 
-const SimpleText = data => {
+const Image = data => {
   const node = data.node;
   const image = getImage(node.relationships.image.value.media.file.childImageSharp);
   const alt = node.relationships.image.attributes.alt;
@@ -14,7 +14,7 @@ const SimpleText = data => {
   );
 }
 
-export default SimpleText;
+export default Image;
 
 export const fragment = graphql`
   fragment ParagraphImage on paragraph__image {

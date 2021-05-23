@@ -8,6 +8,7 @@ import TitleHero from "../components/paragraphs/hero/TitleHero"
 import { getParagraph } from "../components/paragraphs/ParagraphHelper"
 import Seo from "../components/seo"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
+import Categories from "../components/categories/Categories"
 
 const Beach = ({ data }) => {
   // The page node Object.
@@ -18,6 +19,8 @@ const Beach = ({ data }) => {
   const alt = node.relationships.field_single_image.field_media_image.alt;
   const heroImage = <GatsbyImage alt={alt} image={image} className="cover-image" objectFit="cover" />;
   const paragraphs = node.relationships.paragraphs.map(getParagraph);
+  const region = node.relationships.field_region;
+  const tags = node.relationships.field_tags;
   const breadcrumbLinks = [
     {
       'value': 'Praias',
@@ -27,6 +30,9 @@ const Beach = ({ data }) => {
       'value': node.title
     }
   ];
+
+  console.log(region);
+  console.log(tags);
 
   return (
     <>
@@ -38,6 +44,7 @@ const Beach = ({ data }) => {
         <section className="main-content">
           <div className={"container"}>
             <Breadcrumb links={breadcrumbLinks} />
+            <Categories region={region} tags={tags} />
             { paragraphs }
           </div>
         </section>
@@ -54,9 +61,19 @@ export const query = graphql`
       title
       seo_desc: field_seo_short_description
       relationships {
-        field_tags {
-          name
+        field_region {
           id
+          name
+          path {
+            alias
+          }
+        }
+        field_tags {
+          id
+          name
+          path {
+            alias
+          }
         }
         field_single_image {
           field_media_image {
@@ -74,10 +91,6 @@ export const query = graphql`
               }
             }
           }
-        }
-        field_region {
-          name
-          id
         }
         paragraphs: field_paragraphs {
           type: __typename
