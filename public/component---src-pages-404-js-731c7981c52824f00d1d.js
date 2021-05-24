@@ -1,2 +1,0 @@
-(self.webpackChunkcurtafloripa=self.webpackChunkcurtafloripa||[]).push([[883],{9616:function(e,u,r){"use strict";r.r(u);var t=r(7294);u.default=function(){return t.createElement("h1",null,"Oops!")}}}]);
-//# sourceMappingURL=component---src-pages-404-js-731c7981c52824f00d1d.js.map

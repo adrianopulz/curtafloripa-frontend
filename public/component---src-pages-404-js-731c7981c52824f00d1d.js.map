@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://curtafloripa/./src/pages/404.js"],"names":[],"mappings":"sIAQA,UANqB,WACnB,OACE","file":"component---src-pages-404-js-731c7981c52824f00d1d.js","sourcesContent":["import React from \"react\"\n\nconst NotFoundPage = () => {\n  return (\n    <h1>Oops!</h1>\n  )\n}\n\nexport default NotFoundPage;\n"],"sourceRoot":""}
