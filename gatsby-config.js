@@ -9,8 +9,13 @@ console.log(`Using environment config: '${activeEnv}'`)
 
 const domain = {
   'production': 'https://www.curtafloripa.com.br',
-  'development': 'http://localhost:8000',
-  'staging': 'https://develop--curtafloripa.netlify.app'
+  'staging': 'https://develop--curtafloripa.netlify.app',
+  'development': 'http://localhost:8000'
+}
+const cms_base_url = {
+  'production': 'http://cms.curtafloripa.com.br/',
+  'staging': 'http://cms.curtafloripa.com.br/',
+  'development': 'http://curta-floripa.lndo.site/'
 }
 
 module.exports = {
@@ -62,7 +67,7 @@ module.exports = {
     {
       resolve: `gatsby-source-drupal`,
       options: {
-        baseUrl: `http://curta-floripa.lndo.site/`,
+        baseUrl: cms_base_url[activeEnv],
         apiBase: `api`,
       },
     },

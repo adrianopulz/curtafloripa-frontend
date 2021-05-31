@@ -10,7 +10,7 @@ const Card = ( {node} ) => {
   const image = () => {
     if (!node.relationships.field_single_image) {
       return <StaticImage
-        src="../../assets/images/no-image.gif"
+        src="../../assets/images/no-image.png"
         alt="Fundo roxo com texto branco dizendo: Sem Imagem"
         width="352"
         height="230"
