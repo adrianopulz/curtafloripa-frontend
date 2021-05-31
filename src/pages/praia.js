@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
 import Header from "../components/regions/header/Header"
 import Footer from "../components/regions/footer/Footer"
@@ -14,10 +14,6 @@ const Beach = ({ data }) => {
   // The page node Object.
   const node = data.nodeBeach;
 
-  const childImageSharp = node.relationships.field_single_image.relationships.field_media_image.localFile.childImageSharp;
-  const image = getImage(childImageSharp);
-  const alt = node.relationships.field_single_image.field_media_image.alt;
-  const heroImage = <GatsbyImage alt={alt} image={image} className="cover-image" objectFit="cover" />;
   const paragraphs = node.relationships.paragraphs.map(getParagraph);
   const region = node.relationships.field_region;
   const tags = node.relationships.field_tags;
@@ -31,15 +27,39 @@ const Beach = ({ data }) => {
     }
   ];
 
-  console.log(region);
-  console.log(tags);
+  const heroImage = () => {
+    if (!node.relationships.field_single_image) {
+      return <StaticImage
+        src="../../assets/images/no-image.gif"
+        alt="Fundo roxo com texto branco dizendo: Sem Imagem"
+        width="352"
+        height="230"
+        placeholder="blurred"
+        className="cover-image"
+        objectFit="cover"
+        quality={100}
+      />;
+    }
+
+    const alt = node.relationships.field_single_image.field_media_image.alt;
+    const img = getImage(node.relationships.field_single_image.relationships.field_media_image.localFile.childImageSharp);
+    return <GatsbyImage alt={alt} image={img} className="cover-image" objectFit="cover" />;
+  }
+
+  const seoImage = () => {
+    if (!node.relationships.field_single_image) {
+      return null;
+    }
+
+    return node.relationships.field_single_image.relationships.field_media_image.localFile.childImageSharp;
+  }
 
   return (
     <>
-      <Seo title={node.title} description={node.seo_desc} image={childImageSharp.resize.src} article={true} />
+      <Seo title={node.title} description={node.seo_desc} image={seoImage()} article={true} />
       <Header />
       <main id="main" className="beaches-page">
-        <TitleHero title={node.title} image={heroImage} />
+        <TitleHero title={node.title} image={heroImage()} />
 
         <section className="main-content">
           <div className={"container"}>
