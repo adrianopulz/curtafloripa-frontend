@@ -11,8 +11,8 @@ const FooterMenu = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/praias">Praias</Link></li>
         <li><Link to="/">Trilhas</Link></li>
-        <li><Link to="/">Onde Ficar</Link></li>
-        <li><Link to="/">Contato</Link></li>
+        <li><Link to="/em-breve">Onde Ficar</Link></li>
+        <li><Link to="/em-breve">Contato</Link></li>
       </ul>
     </nav>
   );

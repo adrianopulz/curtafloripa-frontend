@@ -64,7 +64,7 @@ const Beach = ({ data }) => {
         <section className="main-content">
           <div className={"container"}>
             <Breadcrumb links={breadcrumbLinks} />
-            <Categories region={region} tags={tags} />
+            <Categories region={region} tags={tags} context={"beach"} />
             { paragraphs }
           </div>
         </section>

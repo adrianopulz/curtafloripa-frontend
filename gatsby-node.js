@@ -44,7 +44,7 @@ exports.createPages = async ({ graphql, actions }) => {
     // Create a new page based on the Praia.js template.
     createPage({
       path: slug,
-      component: path.resolve(`./src/pages/praia.js`),
+      component: path.resolve(`./src/templates/praia.js`),
       context: {
         id: node.id,
       },
@@ -73,16 +73,17 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  // Loop all edges to get all beaches nodes.
+  // Loop all edges to get all region terms.
   regions.data.allTaxonomyTermRegions.edges.forEach(({ node }) => {
     let slug = (node.path.alias) ? node.path.alias : `/regiao/${node.drupal_internal__tid}`;
 
     // Create a new page based on the Region.js template.
     createPage({
-      path: slug,
-      component: path.resolve(`./src/pages/region.js`),
+      path: `/praias${slug}`,
+      component: path.resolve(`./src/templates/region.js`),
       context: {
         id: node.id,
+        type: 'beach'
       },
     })
   });

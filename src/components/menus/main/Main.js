@@ -21,8 +21,8 @@ const MainMenu = () => {
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/praias">Praias</Link></li>
-          <li><Link to="/">Trilhas</Link></li>
-          <li><Link to="/">Onde Ficar</Link></li>
+          <li><Link to="/em-breve">Trilhas</Link></li>
+          <li><Link to="/em-breve">Onde Ficar</Link></li>
         </ul>
       </nav>
     </>

@@ -3,13 +3,14 @@ import { Link } from "gatsby"
 
 import "./categories.scss"
 
-const Categories = ({region, tags}) => {
+const Categories = ({region, tags, context}) => {
+  const link = (context === 'beach') ? `/praias${region.path.alias}` : `/trilhas${region.path.alias}`;
   return (
     <section className={"categories"}>
       <div className={"region taglist"}>
         <div className={"label"}>Região</div>
         <div className={"value"}>
-          <Link to={region.path.alias}>{ region.name }</Link>
+          <Link to={link}>{ region.name }</Link>
         </div>
       </div>
       <div className={"tags taglist"}>
