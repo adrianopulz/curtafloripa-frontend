@@ -19,6 +19,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
+  /**
+   * Beaches
+   */
+
   // Fetch all Node of type Beach.
   const beaches = await graphql(`
     query {
@@ -52,10 +56,9 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   /**
-   * TAGS
+   * Categories
    */
 
-  // Fetch all Node of type Beach.
   const regions = await graphql(`
     query {
       allTaxonomyTermRegions(filter: {status: {eq: true}}) {
@@ -82,8 +85,41 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/praias${slug}`,
       component: path.resolve(`./src/templates/region.js`),
       context: {
-        id: node.id,
-        type: 'beach'
+        id: node.id
+      },
+    })
+  });
+
+  /**
+   * TAGS
+   */
+  const tags = await graphql(`
+    query {
+      allTaxonomyTermTags(filter: {status: {eq: true}}) {
+        edges {
+          node {
+            id
+            drupal_internal__tid
+            name
+            path {
+              alias
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  // Loop all edges to get all region terms.
+  tags.data.allTaxonomyTermTags.edges.forEach(({ node }) => {
+    let slug = (node.path.alias) ? node.path.alias : `/tag/${node.drupal_internal__tid}`;
+
+    // Create a new page based on the Region.js template.
+    createPage({
+      path: `/praias${slug}`,
+      component: path.resolve(`./src/templates/tag.js`),
+      context: {
+        id: node.id
       },
     })
   });

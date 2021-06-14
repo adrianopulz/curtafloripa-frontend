@@ -8,12 +8,12 @@ import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 import BeachesList from "../components/views/beaches/BeachesList"
 import NoResults from "../components/messages/no-results/NoResults"
 
-const Region = ({ data }) => {
+const Tag = ({ data }) => {
   // All returned node of type Beach.
   const nodes = data.allNodeBeach.edges;
 
   // The region data.
-  const region = data.taxonomyTermRegions;
+  const tag = data.taxonomyTermTags;
 
   // The static page hero.
   const heroImage = <StaticImage
@@ -31,16 +31,16 @@ const Region = ({ data }) => {
       'link': '/praias'
     },
     {
-      'value': region.name
+      'value': tag.name
     }
   ];
 
   return (
     <>
-      <Seo title={region.name} article={false} />
+      <Seo title={ tag.name } article={false} />
       <Header />
-      <main id="main" className="region-page">
-        <TitleHero title={region.name} image={heroImage} />
+      <main id="main" className="tag-page">
+        <TitleHero title={tag.name} image={heroImage} />
         <section className="main-content">
           <div className={"container"}>
             <Breadcrumb links={breadcrumbLinks} />
@@ -55,11 +55,11 @@ const Region = ({ data }) => {
   );
 }
 
-export default Region;
+export default Tag;
 
 export const query = graphql`
   query($id: String) {
-    taxonomyTermRegions(id: {eq: $id}) {
+    taxonomyTermTags(id: {eq: $id}) {
       id
       drupal_internal__tid
       name
@@ -68,7 +68,11 @@ export const query = graphql`
         filter: {
           status: {eq: true}
           relationships: {
-            field_region: {id: {eq: $id}}
+            field_tags: {
+              elemMatch: {
+                id: {eq: $id}
+              }
+            }
           }
         }
     ) {
