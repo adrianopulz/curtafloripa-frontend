@@ -10,71 +10,64 @@ import NoResults from "../components/messages/no-results/NoResults"
 
 const Tag = ({ data }) => {
   // All returned node of type Beach.
-  const nodes = data.allNodeBeach.edges;
+  const nodes = data.allNodeBeach.edges
 
   // The region data.
-  const tag = data.taxonomyTermTags;
+  const tag = data.taxonomyTermTags
 
   // The static page hero.
-  const heroImage = <StaticImage
-    src="../assets/images/beaches-hero.jpg"
-    alt="Sol visto de cima de uma montanha com vista do mar ao por do sol."
-    placeholder="blurred"
-    className="cover-image"
-    objectFit="cover"
-    quality={100}
-  />;
+  const heroImage = (
+    <StaticImage
+      src="../assets/images/beaches-hero.jpg"
+      alt="Sol visto de cima de uma montanha com vista do mar ao por do sol."
+      placeholder="blurred"
+      className="cover-image"
+      objectFit="cover"
+      quality={100}
+    />
+  )
 
   const breadcrumbLinks = [
     {
-      'value': 'Praias',
-      'link': '/praias'
+      value: "Praias",
+      link: "/praias",
     },
     {
-      'value': tag.name
-    }
-  ];
+      value: tag.name,
+    },
+  ]
 
   return (
     <>
-      <Seo title={ tag.name } article={false} />
+      <Seo title={tag.name} article={false} />
       <Header />
       <main id="main" className="tag-page">
         <TitleHero title={tag.name} image={heroImage} />
         <section className="main-content">
           <div className={"container"}>
             <Breadcrumb links={breadcrumbLinks} />
-            { nodes.length
-              ? <BeachesList items={nodes} />
-              : <NoResults />
-            }
+            {nodes.length ? <BeachesList items={nodes} /> : <NoResults />}
           </div>
         </section>
       </main>
     </>
-  );
+  )
 }
 
-export default Tag;
+export default Tag
 
 export const query = graphql`
-  query($id: String) {
-    taxonomyTermTags(id: {eq: $id}) {
+  query ($id: String) {
+    taxonomyTermTags(id: { eq: $id }) {
       id
       drupal_internal__tid
       name
     }
     allNodeBeach(
-        filter: {
-          status: {eq: true}
-          relationships: {
-            field_tags: {
-              elemMatch: {
-                id: {eq: $id}
-              }
-            }
-          }
-        }
+      filter: {
+        status: { eq: true }
+        relationships: { field_tags: { elemMatch: { id: { eq: $id } } } }
+      }
     ) {
       edges {
         node {

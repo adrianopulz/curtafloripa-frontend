@@ -7,22 +7,23 @@ import Footer from "../components/regions/footer/Footer"
 import { StaticImage } from "gatsby-plugin-image"
 
 const ComingSoon = () => {
-
   const breadcrumbLinks = [
     {
-      'value': 'Em breve'
-    }
-  ];
+      value: "Em breve",
+    },
+  ]
 
   // The static page hero.
-  const heroImage = <StaticImage
-    src="../assets/images/beaches-hero.jpg"
-    alt="Sol visto de cima de uma montanha com vista do mar ao por do sol."
-    placeholder="blurred"
-    className="cover-image"
-    objectFit="cover"
-    quality={100}
-  />;
+  const heroImage = (
+    <StaticImage
+      src="../assets/images/beaches-hero.jpg"
+      alt="Sol visto de cima de uma montanha com vista do mar ao por do sol."
+      placeholder="blurred"
+      className="cover-image"
+      objectFit="cover"
+      quality={100}
+    />
+  )
 
   return (
     <>
@@ -39,7 +40,7 @@ const ComingSoon = () => {
       </main>
       <Footer />
     </>
-  );
+  )
 }
 
-export default ComingSoon;
+export default ComingSoon

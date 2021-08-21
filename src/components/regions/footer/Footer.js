@@ -2,7 +2,7 @@ import React from "react"
 
 import FooterMenu from "../../menus/footer/FooterMenu"
 
-import "./footer.scss";
+import "./footer.scss"
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
         <FooterMenu />
       </div>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

@@ -1,20 +1,20 @@
 import React from "react"
-import { graphql } from 'gatsby'
-import { getImage, GatsbyImage  } from "gatsby-plugin-image"
+import { graphql } from "gatsby"
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 
-import "./image.scss";
+import "./image.scss"
 
 const Image = data => {
-  const node = data.node;
-  const image = getImage(node.relationships.image.value.media.file.childImageSharp);
-  const alt = node.relationships.image.attributes.alt;
+  const node = data.node
+  const image = getImage(
+    node.relationships.image.value.media.file.childImageSharp
+  )
+  const alt = node.relationships.image.attributes.alt
 
-  return (
-    <GatsbyImage alt={alt} image={image} className="paragraph-image" />
-  );
+  return <GatsbyImage alt={alt} image={image} className="paragraph-image" />
 }
 
-export default Image;
+export default Image
 
 export const fragment = graphql`
   fragment ParagraphImage on paragraph__image {
@@ -28,7 +28,11 @@ export const fragment = graphql`
           media: field_media_image {
             file: localFile {
               childImageSharp {
-                gatsbyImageData(quality: 100, layout: FULL_WIDTH, breakpoints: [750, 1088])
+                gatsbyImageData(
+                  quality: 100
+                  layout: FULL_WIDTH
+                  breakpoints: [750, 1088]
+                )
               }
             }
           }
@@ -36,4 +40,4 @@ export const fragment = graphql`
       }
     }
   }
-`;
+`

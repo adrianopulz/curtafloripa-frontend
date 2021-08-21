@@ -5,11 +5,11 @@ const BeachesList = ({ items }) => {
   return (
     <section className="beaches cards-list">
       {items.map((value, index) => {
-        const node = value.node;
+        const node = value.node
         return <Card key={node.id} node={node} />
       })}
     </section>
   )
 }
 
-export default BeachesList;
+export default BeachesList

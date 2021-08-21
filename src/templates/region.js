@@ -10,30 +10,32 @@ import NoResults from "../components/messages/no-results/NoResults"
 
 const Region = ({ data }) => {
   // All returned node of type Beach.
-  const nodes = data.allNodeBeach.edges;
+  const nodes = data.allNodeBeach.edges
 
   // The region data.
-  const region = data.taxonomyTermRegions;
+  const region = data.taxonomyTermRegions
 
   // The static page hero.
-  const heroImage = <StaticImage
-    src="../assets/images/beaches-hero.jpg"
-    alt="Sol visto de cima de uma montanha com vista do mar ao por do sol."
-    placeholder="blurred"
-    className="cover-image"
-    objectFit="cover"
-    quality={100}
-  />;
+  const heroImage = (
+    <StaticImage
+      src="../assets/images/beaches-hero.jpg"
+      alt="Sol visto de cima de uma montanha com vista do mar ao por do sol."
+      placeholder="blurred"
+      className="cover-image"
+      objectFit="cover"
+      quality={100}
+    />
+  )
 
   const breadcrumbLinks = [
     {
-      'value': 'Praias',
-      'link': '/praias'
+      value: "Praias",
+      link: "/praias",
     },
     {
-      'value': region.name
-    }
-  ];
+      value: region.name,
+    },
+  ]
 
   return (
     <>
@@ -44,33 +46,28 @@ const Region = ({ data }) => {
         <section className="main-content">
           <div className={"container"}>
             <Breadcrumb links={breadcrumbLinks} />
-            { nodes.length
-              ? <BeachesList items={nodes} />
-              : <NoResults />
-            }
+            {nodes.length ? <BeachesList items={nodes} /> : <NoResults />}
           </div>
         </section>
       </main>
     </>
-  );
+  )
 }
 
-export default Region;
+export default Region
 
 export const query = graphql`
-  query($id: String) {
-    taxonomyTermRegions(id: {eq: $id}) {
+  query ($id: String) {
+    taxonomyTermRegions(id: { eq: $id }) {
       id
       drupal_internal__tid
       name
     }
     allNodeBeach(
-        filter: {
-          status: {eq: true}
-          relationships: {
-            field_region: {id: {eq: $id}}
-          }
-        }
+      filter: {
+        status: { eq: true }
+        relationships: { field_region: { id: { eq: $id } } }
+      }
     ) {
       edges {
         node {

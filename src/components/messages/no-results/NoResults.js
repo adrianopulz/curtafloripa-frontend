@@ -8,4 +8,4 @@ const NoResults = () => {
   )
 }
 
-export default NoResults;
+export default NoResults

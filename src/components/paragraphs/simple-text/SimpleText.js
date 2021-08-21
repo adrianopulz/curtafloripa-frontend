@@ -1,15 +1,18 @@
 import React from "react"
-import { graphql } from 'gatsby'
+import { graphql } from "gatsby"
 
 const SimpleText = data => {
-  const node = data.node;
+  const node = data.node
 
   return (
-    <article className="simple-text" dangerouslySetInnerHTML={{ __html: node.copy.processed }} />
-  );
+    <article
+      className="simple-text"
+      dangerouslySetInnerHTML={{ __html: node.copy.processed }}
+    />
+  )
 }
 
-export default SimpleText;
+export default SimpleText
 
 export const fragment = graphql`
   fragment ParagraphSimpleText on paragraph__simple_text {
@@ -19,4 +22,4 @@ export const fragment = graphql`
       format
     }
   }
-`;
+`

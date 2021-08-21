@@ -8,7 +8,8 @@
     "build": "gatsby build",
     "build-stage": "GATSBY_ACTIVE_ENV=staging npm run build",
     "build-prod": "GATSBY_ACTIVE_ENV=production npm run build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
+    "dev-prod": "GATSBY_ACTIVE_ENV=production npm run dev",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -17,18 +18,18 @@
   },
   "dependencies": {
     "@splidejs/react-splide": "^0.4.4",
-    "gatsby": "^3.2.1",
-    "gatsby-plugin-gatsby-cloud": "^2.2.0",
-    "gatsby-plugin-image": "^1.2.1",
-    "gatsby-plugin-manifest": "^3.2.0",
-    "gatsby-plugin-offline": "^4.2.0",
-    "gatsby-plugin-react-helmet": "^4.2.0",
+    "gatsby": "^3.11.1",
+    "gatsby-plugin-gatsby-cloud": "^2.11.0",
+    "gatsby-plugin-image": "^1.11.0",
+    "gatsby-plugin-manifest": "^3.11.0",
+    "gatsby-plugin-offline": "^4.11.0",
+    "gatsby-plugin-react-helmet": "^4.11.0",
     "gatsby-plugin-sass": "^4.2.0",
-    "gatsby-plugin-sharp": "3.1.0",
+    "gatsby-plugin-sharp": "^3.11.0",
     "gatsby-plugin-webfonts": "^2.1.0",
     "gatsby-source-drupal": "^4.2.0",
-    "gatsby-source-filesystem": "3.0.0",
-    "gatsby-transformer-sharp": "^3.2.0",
+    "gatsby-source-filesystem": "^3.11.0",
+    "gatsby-transformer-sharp": "^3.11.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -36,7 +37,7 @@
     "sass": "^1.32.8"
   },
   "devDependencies": {
-    "prettier": "2.2.1"
+    "prettier": "2.3.2"
   },
   "repository": {
     "type": "git",

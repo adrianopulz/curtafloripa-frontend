@@ -1,9 +1,9 @@
 import React from "react"
 
 import Logo from "../../logo/Logo"
-import MainNav from "../../menus/main/Main";
+import MainNav from "../../menus/main/Main"
 
-import "./header.scss";
+import "./header.scss"
 
 const Hero = () => {
   return (
@@ -13,7 +13,7 @@ const Hero = () => {
         <MainNav />
       </div>
     </header>
-  );
+  )
 }
 
-export default Hero;
+export default Hero

@@ -1,10 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import "./breadcrumb.scss";
-import ArrowRight from "../svgs/ArrowRight";
+import "./breadcrumb.scss"
+import ArrowRight from "../svgs/ArrowRight"
 
-const renderBreadcrumbItem = (item) => {
+const renderBreadcrumbItem = item => {
   if (item.link) {
     return (
       <li>
@@ -12,13 +12,12 @@ const renderBreadcrumbItem = (item) => {
         <ArrowRight />
       </li>
     )
-  }
-  else {
+  } else {
     return <li>{item.value}</li>
   }
-};
+}
 
-const Breadcrumb = ( {links} ) => {
+const Breadcrumb = ({ links }) => {
   return (
     <div className="breadcrumb">
       <ul>
@@ -27,10 +26,10 @@ const Breadcrumb = ( {links} ) => {
           <Link to={"/"}>HOME</Link>
           <ArrowRight />
         </li>
-        { links.map(renderBreadcrumbItem) }
+        {links.map(renderBreadcrumbItem)}
       </ul>
     </div>
-  );
+  )
 }
 
-export default Breadcrumb;
+export default Breadcrumb
