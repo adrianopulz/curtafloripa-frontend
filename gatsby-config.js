@@ -15,7 +15,7 @@ const domain = {
 const cms_base_url = {
   'production': 'http://cms.curtafloripa.com.br/',
   'staging': 'http://cms.curtafloripa.com.br/',
-  'development': 'http://curta-floripa.lndo.site/'
+  'development': 'http://localhost:9000/'
 }
 
 module.exports = {

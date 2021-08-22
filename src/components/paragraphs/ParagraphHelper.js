@@ -3,12 +3,14 @@ import SlideShow from "./slide-show/SlideShow"
 import SimpleText from "./simple-text/SimpleText"
 import Image from "./image/Image"
 import SideBySide from "./side-by-side/SideBySide"
+import Video from "./video/Video"
 
 const components = {
   paragraph__slide_show: SlideShow,
   paragraph__simple_text: SimpleText,
   paragraph__image: Image,
   paragraph__featured_side_by_side: SideBySide,
+  paragraph__video: Video,
 }
 
 export const getParagraph = node => {

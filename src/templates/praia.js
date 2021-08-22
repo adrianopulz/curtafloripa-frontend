@@ -135,6 +135,7 @@ export const query = graphql`
           ...ParagraphSimpleText
           ...ParagraphImage
           ...ParagraphSideBySide
+          ...ParagraphVideo
         }
       }
     }
