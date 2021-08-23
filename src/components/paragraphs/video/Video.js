@@ -13,9 +13,6 @@ const Video = data => {
   const url  = node.relationships.video.url
   const id = youtube_parser(url)
 
-  console.log(url)
-  console.log(id)
-
   return (
     <section className={"external-video"}>
       <iframe 
