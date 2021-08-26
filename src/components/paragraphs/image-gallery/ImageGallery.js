@@ -16,7 +16,12 @@ const ImageGallery = data => {
     })
   })
 
-  return <Gallery items={images} />
+  return (
+    <section className={"image-gallery-component"}>
+      <h2>Galeria de imagens</h2>
+      <Gallery items={images} />
+    </section>
+  )
 }
 
 export default ImageGallery
