@@ -4,6 +4,7 @@ import SimpleText from "./simple-text/SimpleText"
 import Image from "./image/Image"
 import SideBySide from "./side-by-side/SideBySide"
 import Video from "./video/Video"
+import ImageGallery from "./image-gallery/ImageGallery"
 
 const components = {
   paragraph__slide_show: SlideShow,
@@ -11,6 +12,7 @@ const components = {
   paragraph__image: Image,
   paragraph__featured_side_by_side: SideBySide,
   paragraph__video: Video,
+  paragraph__image_gallery: ImageGallery
 }
 
 export const getParagraph = node => {
