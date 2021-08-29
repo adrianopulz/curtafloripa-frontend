@@ -12,7 +12,10 @@ const ImageGallery = data => {
     console.log(item.entity.media.file.image[0]);
     images.push({
       original: item.entity.media.file.image[0].resize.src,
-      thumbnail: item.entity.media.file.image[0].fixed.src,
+      thumbnail: item.entity.media.file.thumb[0].fixed.src,
+      fullscreen: item.entity.media.file.full[0].resize.src,
+      originalAlt: item.attributes.alt,
+      thumbnailAlt: item.attributes.alt
     })
   })
 
@@ -34,13 +37,22 @@ export const fragment = graphql`
         entity: relationships {
           media: field_media_image {
             file: localFile {
-              image: childrenImageSharp {
-                resize(quality: 100, height: 650) {
+              thumb: childrenImageSharp {
+                fixed(height: 188, width: 250, quality: 80, cropFocus: CENTER) {
                   src
                   width
                   height
                 }
-                fixed(height: 150, width: 250, quality: 80, cropFocus: CENTER) {
+              }
+              image: childrenImageSharp {
+                resize(quality: 100, height: 816) {
+                  src
+                  width
+                  height
+                }
+              }
+              full: childrenImageSharp {
+                resize(quality: 100, width: 1920) {
                   src
                   width
                   height

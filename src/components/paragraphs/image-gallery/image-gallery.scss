@@ -6,15 +6,14 @@
   }
 }
 
-
 .image-gallery-swipe {
   background: #444;
 }
 
-.image-gallery-slide {
-  max-height: 650px;
-}
-
-.image-gallery-content .image-gallery-slide .image-gallery-image {
-  max-height: 650px;
+.image-gallery-content:not(.fullscreen) {
+  .image-gallery-slide {
+    &, .image-gallery-image {
+      max-height: 816px;
+    }
+  }
 }
