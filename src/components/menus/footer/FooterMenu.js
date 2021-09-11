@@ -20,9 +20,6 @@ const FooterMenu = () => {
         <li>
           <Link to="/onde-ficar">Onde Ficar</Link>
         </li>
-        <li>
-          <Link to="/em-breve">Contato</Link>
-        </li>
       </ul>
     </nav>
   )
