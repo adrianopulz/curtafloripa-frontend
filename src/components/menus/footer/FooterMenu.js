@@ -15,10 +15,10 @@ const FooterMenu = () => {
           <Link to="/praias">Praias</Link>
         </li>
         <li>
-          <Link to="/">Trilhas</Link>
+          <Link to="/trilhas">Trilhas</Link>
         </li>
         <li>
-          <Link to="/em-breve">Onde Ficar</Link>
+          <Link to="/onde-ficar">Onde Ficar</Link>
         </li>
         <li>
           <Link to="/em-breve">Contato</Link>

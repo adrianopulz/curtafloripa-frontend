@@ -1,0 +1,22 @@
+@import "../../assets/scss/media-queries";
+
+a.external-link {
+  text-decoration: none;
+  color: $thirdColor;
+
+  &:hover {
+    text-decoration: underline;
+    font-weight: 500;
+  }
+
+  span {
+    display: flex;
+  }
+
+  svg {
+    width: 15px;
+    height: auto;
+    fill: $darkColor;
+    margin-right: 7px;
+  }
+}

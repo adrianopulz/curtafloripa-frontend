@@ -80,6 +80,14 @@ a {
 
 #main {
   overflow: auto;
+  
+  @include smallUp {
+    min-height: calc(100vh - 142px);
+  }
+
+  @include mediumUp {
+    min-height: calc(100vh - 162px);
+  }
 }
 
 .main-content {
