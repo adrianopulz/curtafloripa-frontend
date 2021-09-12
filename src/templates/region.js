@@ -10,7 +10,19 @@ import NoResults from "../components/messages/no-results/NoResults"
 
 const Region = ({ data }) => {
   // All returned node of type Beach.
-  const nodes = data.allNodeBeach.edges
+  const nodes = data.allNodeBeach.edges.map((value) => {
+    const node = value.node
+    const path = node.path.alias
+    ? node.path.alias
+    : `/praia/praia-${node.drupal_internal__nid}`
+
+    return {
+      id: node.id,
+      title: node.title,
+      path: path,
+      image: (node.relationships.field_single_image) ? node.relationships.field_single_image : null
+    }
+  })
 
   // The region data.
   const region = data.taxonomyTermRegions
