@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -9,10 +9,35 @@ import BeachesList from "../components/views/beaches/BeachesList"
 import NoResults from "../components/messages/no-results/NoResults"
 import Seo from "../components/seo"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
+import Filters from "../components/filters/Filters"
 
 const Beaches = ({ data }) => {
-  // All returned node of type Beach.
-  const nodes = data.allNodeBeach.edges
+  let regions = []
+  let addedRegions = []
+  const nodes = data.allNodeBeach.edges.map((value) => {
+    const node = value.node
+    const regionId = node.relationships.field_region.id
+    const path = node.path.alias
+    ? node.path.alias
+    : `/praia/praia-${node.drupal_internal__nid}`
+
+    if (addedRegions.indexOf(regionId) === -1) {
+      regions.push({
+        id: regionId,
+        name: node.relationships.field_region.name
+      })
+      addedRegions.push(regionId)
+    }
+
+    return {
+      id: node.id,
+      title: node.title,
+      region: regionId,
+      path: path,
+      image: (node.relationships.field_single_image) ? node.relationships.field_single_image : null
+    }
+  })
+  const [beaches, setBeaches] = useState(nodes);
 
   // The static page hero.
   const heroImage = (
@@ -32,6 +57,26 @@ const Beaches = ({ data }) => {
     },
   ]
 
+  // Filters
+  const [name, setName] = useState('');
+  const [region, setRegion] = useState('all');
+  const submitHandler = () => {
+    const filteredData = nodes.filter((value) => {
+      let titleFilter = true
+      let regionFilter = true
+      if (name !== '') {
+        titleFilter = (value.title.toLowerCase().includes(name.toLowerCase()))
+      }
+
+      if (region !== 'all') {
+        regionFilter = (value.region === region)
+      }
+
+      return (titleFilter && regionFilter)
+    })
+    setBeaches(filteredData)
+  }
+
   return (
     <>
       <Seo title="Praias" article={false} />
@@ -41,7 +86,13 @@ const Beaches = ({ data }) => {
         <section className="main-content">
           <div className={"container"}>
             <Breadcrumb links={breadcrumbLinks} />
-            {nodes.length ? <BeachesList items={nodes} /> : <NoResults />}
+            <Filters name={name} setName={setName} region={region} setRerion={setRegion} regions={regions} submitHandler={submitHandler} />
+
+            {
+              beaches.length ? <>
+                <BeachesList items={beaches} />
+              </> : <NoResults />
+            }
           </div>
         </section>
       </main>
@@ -62,6 +113,10 @@ export const query = graphql`
             alias
           }
           relationships {
+            field_region {
+              id
+              name
+            }
             field_single_image {
               field_media_image {
                 alt

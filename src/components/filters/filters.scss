@@ -1,0 +1,46 @@
+@import "../../assets/scss/media-queries";
+
+.form-filters {
+  margin-bottom: 40px;
+
+  .form-row {
+    @include smallUp {
+      display: flex;
+    }
+  }
+
+  .form-actions {
+    margin-top: 10px;
+  }
+
+  .filter-name {
+    width: 100%;
+    @include smallUp {
+      max-width: 400px;
+      margin-right: 10px;
+    }
+  }
+
+  select {
+    width: 100%;
+    
+    @include smallUp {
+      width: 160px;
+    }
+  }
+
+  label {
+    font-size: 13px;
+    font-weight: 500;
+    display: block;
+  }
+
+  button {
+    width: 100%;
+
+    @include smallUp {
+      width: 180px;
+      min-width: 180px;
+    }
+  }
+}

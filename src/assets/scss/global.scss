@@ -93,3 +93,18 @@ a {
 .main-content {
   padding: 0 0 100px;
 }
+
+input {
+  width: 100%;
+  border: 1px solid $darkColor;
+  border-radius: 5px;
+  height: 35px;
+  padding: 0 10px;
+}
+
+select {
+  border: 1px solid $darkColor;
+  border-radius: 5px;
+  height: 35px;
+  padding: 0 10px;
+}
