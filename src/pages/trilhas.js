@@ -36,8 +36,7 @@ const Trails = () => {
         <section className="main-content">
           <div className={"container"}>
             <Breadcrumb links={breadcrumbLinks} />
-            <p>A ilha de Florianópolis tem muitas opções de trilhas, e em breve teremos elas disponíveis aqui.</p>
-            <p>Desculpe pelo incoviniente, em breve teremos mais informações para você.</p>
+            <p>Relaxa, caminhar ou se exercitar admirando as paisagens naturais, respirando ar puro. Quem ama essa sensação, vai ficar encantado pelas várias opções de trilhas em Floripa. Independente do seu perfil, mais sedentário ou mais atleta, poderá escolher desde os caminhos mais leves até os mais longos e curtir a natureza em meio a lindas paisagens. Listamos algumas das principais trilhas da ilha da magia para você não perder nada.</p>
           </div>
         </section>
       </main>
