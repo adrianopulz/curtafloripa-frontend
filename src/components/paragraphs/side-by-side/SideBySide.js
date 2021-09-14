@@ -2,6 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 
+import ExternalLink from "../../external-link/ExternalLink"
+
 import "./side-by-side.scss"
 
 const SideBySide = data => {
@@ -21,6 +23,7 @@ const SideBySide = data => {
           className="copy"
           dangerouslySetInnerHTML={{ __html: node.copy.processed }}
         />
+        { (node.cta && node.cta.uri) ? <ExternalLink url={node.cta.uri} value={node.cta.title} btn={true} /> : '' }
       </div>
     </article>
   )
@@ -52,7 +55,7 @@ export const fragment = graphql`
       processed
       value
     }
-    field_link {
+    cta: field_link {
       title
       uri
     }

@@ -131,6 +131,7 @@ export const query = graphql`
         }
         paragraphs: field_paragraphs {
           type: __typename
+          ...ParagraphSimpleText
           ...ParagraphSideBySide
         }
       }

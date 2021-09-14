@@ -83,9 +83,9 @@ exports.createPages = async ({ graphql, actions }) => {
   trails.data.allNodeTrails.edges.forEach(({ node }) => {
     let slug = node.path.alias
       ? node.path.alias
-      : `/trilha/praia-${node.drupal_internal__nid}`
+      : `/trilha/trilha-${node.drupal_internal__nid}`
 
-    // Create a new page based on the Praia.js template.
+    // Create a new page based on the Trilha.js template.
     createPage({
       path: slug,
       component: path.resolve(`./src/templates/trilha.js`),

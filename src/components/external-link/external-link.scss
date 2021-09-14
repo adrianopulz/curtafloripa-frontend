@@ -4,6 +4,16 @@ a.external-link {
   text-decoration: none;
   color: $thirdColor;
 
+  &.btn {
+    color: $whiteColor;
+    max-width: none;
+    width: fit-content;
+
+    @include mediumUp {
+      min-width: auto;
+    }
+  }
+
   &:hover {
     text-decoration: underline;
     font-weight: 500;
@@ -20,3 +30,4 @@ a.external-link {
     margin-right: 7px;
   }
 }
+
