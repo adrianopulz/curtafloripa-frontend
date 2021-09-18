@@ -12,11 +12,11 @@ a.external-link {
     @include mediumUp {
       min-width: auto;
     }
-  }
 
-  &:hover {
-    text-decoration: underline;
-    font-weight: 500;
+    svg {
+      fill: #FFF;
+      width: 20px;
+    }
   }
 
   span {
