@@ -1,11 +1,11 @@
 import React from "react"
-import Card from "../../card/Card"
+import TrailTeaser from "../../trail-teaser/TrailTeaser"
 
 const TrailsList = ({ items }) => {
   return (
-    <section className="trails cards-list">
-      {items.map((value) => {
-        return <Card key={value.id} node={value} />
+    <section className="trails trail-teaser-list">
+      {items.map((node) => {
+        return <TrailTeaser key={node.id} node={node} />
       })}
     </section>
   )

@@ -1,0 +1,74 @@
+@import "../../assets/scss/media-queries";
+
+.trail-teaser-list {
+  width: 100%;
+
+  .trail-teaser {
+    margin-top: 40px;
+    border-top: 1px solid rgb(224, 224, 224);
+    padding-top: 40px;
+
+    &:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    @include smallUp {
+      border-top: 0;
+      padding-top: 0;
+      margin-top: 60px;
+
+      &:nth-child(even) {
+        .col-image {
+          float: right;
+          padding-right: 0;
+          padding-left: 20px;
+        }
+      }
+    }
+
+    @include mediumUp {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+        .col-image {
+          padding-left: 0;
+        }
+      }
+    }
+
+    .col-image {
+      width: 100%;
+      margin-bottom: 20px;
+
+      @include smallUp {
+        width: 360px;
+        padding-right: 20px;
+        margin-bottom: 0;
+        float: left;
+      }
+
+      @include mediumUp {
+        width: 400px;
+        padding: 0;
+      }
+
+      @include largeUp {
+        width: 440px;
+      }
+    }
+
+    .col-content {
+      @include mediumUp {
+        width: 510px;
+      }
+
+      @include largeUp {
+        width: 608px;
+      }
+    }
+  }
+}

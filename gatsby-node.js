@@ -58,44 +58,6 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   /**
-   * Trails
-   */
-
-  // Fetch all Node of type Beach.
-  const trails = await graphql(`
-    query {
-      allNodeTrails(filter: { status: { eq: true } }) {
-        edges {
-          node {
-            id
-            drupal_internal__nid
-            title
-            path {
-              alias
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  // Loop all edges to get all beaches nodes.
-  trails.data.allNodeTrails.edges.forEach(({ node }) => {
-    let slug = node.path.alias
-      ? node.path.alias
-      : `/trilha/trilha-${node.drupal_internal__nid}`
-
-    // Create a new page based on the Trilha.js template.
-    createPage({
-      path: slug,
-      component: path.resolve(`./src/templates/trilha.js`),
-      context: {
-        id: node.id,
-      },
-    })
-  })
-
-  /**
    * Categories
    */
   const regions = await graphql(`
