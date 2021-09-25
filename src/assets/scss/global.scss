@@ -9,7 +9,6 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background: #FFF;
 }
 
 body {
@@ -17,9 +16,15 @@ body {
   font-size: 19px;
   line-height: 1.5em;
   color: $darkColor;
+  background: #FFF;
   font-weight: $regularWeight;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  &.dark-mode {
+    background: $darkColor;
+    color: $darkColorLight;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -50,6 +55,7 @@ h2 {
 h3 {
   font-size: 23px;
   font-weight: 400;
+  color: $secondaryColor;
 
   @include mediumUp {
     font-size: 29px;
@@ -100,6 +106,11 @@ input {
   border-radius: 5px;
   height: 35px;
   padding: 0 10px;
+
+  .dark-mode & {
+    background: $darkColorMedium;
+    color: $darkColorLight;
+  }
 }
 
 select {
@@ -107,4 +118,9 @@ select {
   border-radius: 5px;
   height: 35px;
   padding: 0 10px;
+
+  .dark-mode & {
+    background: $darkColorMedium;
+    color: $darkColorLight;
+  }
 }

@@ -28,6 +28,10 @@ a.external-link {
     height: auto;
     fill: $darkColor;
     margin-right: 7px;
+
+    .dark-mode & {
+      fill: $darkColorLight;
+    }
   }
 }
 

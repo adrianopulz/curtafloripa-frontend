@@ -7,6 +7,27 @@
     align-items: center;
     height: 100%;
   }
+
+  .navigation {
+    display: flex;
+    align-items: center;
+    
+    @include smallUp {
+      flex-grow: 2;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: row-reverse;
+    }
+  }
+
+  .dark-mode-toggle {
+    margin-right: 50px;
+
+    @include smallUp {
+      margin-right: 0;
+    }
+  }
 }
 
 #header-home {
@@ -22,6 +43,7 @@
   figure.logo {
     padding: 0;
     margin: 0;
+    flex-grow: 1;
 
     img {
       width: auto;
@@ -38,6 +60,10 @@
   height: 62px;
   border-bottom: 2px solid $primaryColor;
   position: relative;
+
+  .dark-mode & {
+    border-bottom: 2px solid $darkColorLight;
+  }
 
   @include mediumUp {
     height: 82px;

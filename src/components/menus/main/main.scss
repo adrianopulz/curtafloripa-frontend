@@ -67,11 +67,16 @@
 
   @include smallUp {
     position: static;
-    width: 70%;
-    max-width: 580px;
+    max-width: 400px;
     height: auto;
     background: none;
     display: block;
+    margin-right: 30px;
+  }
+
+  @include mediumUp {
+    max-width: 500px;
+    margin-right: 50px;
   }
 
   ul {
@@ -90,8 +95,12 @@
       margin: 10px 0;
 
       @include smallUp {
-        font-size: 21px;
+        font-size: 17px;
         margin: 0;
+      }
+
+      @include mediumUp {
+        font-size: 21px;
       }
     }
   }

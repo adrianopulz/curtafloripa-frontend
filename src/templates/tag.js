@@ -1,6 +1,7 @@
 import React from "react"
 import Seo from "../components/seo"
 import Header from "../components/regions/header/Header"
+import Footer from "../components/regions/footer/Footer"
 import { graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import TitleHero from "../components/paragraphs/hero/TitleHero"
@@ -62,6 +63,7 @@ const Tag = ({ data }) => {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   )
 }
