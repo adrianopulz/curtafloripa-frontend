@@ -33,7 +33,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-offline`,
     {
       resolve: 'gatsby-plugin-use-dark-mode',
       options: {
@@ -89,7 +88,16 @@ module.exports = {
         background_color: `#113c4a`,
         theme_color: `#3f7b70`,
         display: `minimal-ui`,
-        icon: `src/assets/images/icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/icon.svg`,
+        icon_options: {
+          purpose: `any maskable`,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/praias/`, `/praias/regiao/*`, `/praias/tag/*`, `/praia/*`, `/trilhas/`, `/onde-ficar/`],
       },
     },
   ],

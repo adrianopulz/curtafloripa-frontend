@@ -29,7 +29,7 @@ const TrailTeaser = ({node}) => {
   return (
     <article className="trail-teaser">
       <div className="col-image">
-        <a href={node.link} target="_blank" className="image">
+        <a href={node.link} target="_blank" className="image" rel="noreferrer">
           {image()}
         </a>
       </div>

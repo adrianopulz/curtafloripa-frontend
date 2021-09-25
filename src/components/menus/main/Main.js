@@ -20,7 +20,7 @@ const MainMenu = () => {
       <DarkModeToggle
         onChange={darkMode.toggle}
         checked={darkMode.value}
-        size={55}
+        size={60}
         className="dark-mode-toggle"
       />
       <button id={"hamburger"} onClick={() => setMenuStatus(true)}>
