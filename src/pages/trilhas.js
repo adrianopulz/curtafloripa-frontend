@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -11,7 +11,7 @@ import Seo from "../components/seo"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 
 const Trails = ({ data }) => {
-  const nodes = data.allNodeTrails.edges.map((value) => {
+  const trails = data.allNodeTrails.edges.map((value) => {
     const node = value.node
     return {
       id: node.id,
@@ -21,7 +21,7 @@ const Trails = ({ data }) => {
       image: (node.relationships.field_single_image) ? node.relationships.field_single_image : null
     }
   })
-  const [trails, setTrails] = useState(nodes);
+  
 
   // The static page hero.
   const heroImage = (

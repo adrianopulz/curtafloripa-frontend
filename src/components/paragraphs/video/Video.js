@@ -20,8 +20,8 @@ const Video = data => {
         height="315" 
         src={`https://www.youtube.com/embed/${id}`} 
         title={node.relationships.video.name}
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        frameBorder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
       </iframe>
     </section>
   )

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image"
 import Button from "../../button/Button"
 import { drupalToGatsby } from "../../../helpers/Urls"

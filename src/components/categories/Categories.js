@@ -25,7 +25,7 @@ const Categories = ({ region, tags, context }) => {
                 ? `/praias${value.path.alias}`
                 : `/trilhas${value.path.alias}`
             return (
-              <Link key={value.id} to={link_tag}>
+              <Link key={index} to={link_tag}>
                 {value.name}
               </Link>
             )

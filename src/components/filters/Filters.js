@@ -17,9 +17,9 @@ const Filters = ({name, setName, region, setRerion, regions, submitHandler}) => 
           <select id="region" value={region} onChange={(e) => {
             setRerion(e.target.value)
           }}>
-            <option value="all">Todas</option>
-            {regions.map((value) => {
-              return <option value={ value.id }>{ value.name }</option>
+            <option value="all" key="all">Todas</option>
+            {regions.map((value, index) => {
+              return <option value={ value.id } key={index}>{ value.name }</option>
             })}
           </select>
         </div>

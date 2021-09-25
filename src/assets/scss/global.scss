@@ -75,6 +75,10 @@ img {
 a {
   color: $thirdColor;
 
+  .dark-mode & {
+    color: $thirdColorDark;
+  }
+
   &:hover {
     color: $primaryColor;
   }

@@ -60,11 +60,9 @@ const Beach = ({ data }) => {
 
   const seoImage = () => {
     if (!node.relationships.field_single_image) {
-      return null
+      return '../assets/images/no-image.png'
     }
-
-    return node.relationships.field_single_image.relationships.field_media_image
-      .localFile.childImageSharp
+    return node.relationships.field_single_image.relationships.field_media_image.localFile.childImageSharp.resize.src
   }
 
   return (
@@ -122,7 +120,7 @@ export const query = graphql`
               localFile {
                 childImageSharp {
                   gatsbyImageData(layout: FULL_WIDTH, quality: 100)
-                  resize {
+                  resize(quality: 100, width: 720) {
                     src
                   }
                 }

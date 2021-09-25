@@ -16,6 +16,10 @@
   border: 0;
   cursor: pointer;
 
+  .dark-mode & {
+    color: $whiteColor;
+  }
+
   @include mediumUp {
     min-width: 290px;
   }

@@ -15,10 +15,10 @@ const components = {
   paragraph__image_gallery: ImageGallery
 }
 
-export const getParagraph = node => {
+export const getParagraph = (node, index) => {
   if (components.hasOwnProperty(node.type)) {
     const ParagraphComponent = components[node.type]
-    return <ParagraphComponent key={node.id} node={node} />
+    return <ParagraphComponent key={`${node.id}_${index}`} node={node} />
   }
 
   return <p key={node.id}>Unknown type {node.__typename}</p>

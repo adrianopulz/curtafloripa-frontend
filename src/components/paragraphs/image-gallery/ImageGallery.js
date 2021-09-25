@@ -8,15 +8,14 @@ const ImageGallery = data => {
   const items = data.node.results.items
   let images = []
 
-  items.map((item) => {
-    console.log(item.entity.media.file.image[0]);
-    images.push({
+  images = items.map((item) => {
+    return {
       original: item.entity.media.file.image[0].resize.src,
       thumbnail: item.entity.media.file.thumb[0].fixed.src,
       fullscreen: item.entity.media.file.full[0].resize.src,
       originalAlt: item.attributes.alt,
       thumbnailAlt: item.attributes.alt
-    })
+    }
   })
 
   return (

@@ -38,7 +38,7 @@ const SlideShow = ({ node }) => {
         {slides}
       </Splide>
     )
-  }, [])
+  }, [node])
 
   return slideShow
 }
