@@ -13,6 +13,7 @@ const ImageGallery = data => {
       thumbnail: item.entity.media.file.thumb[0].fixed.src,
       originalAlt: item.attributes.alt,
       thumbnailAlt: item.attributes.alt,
+      sizes: "(min-width: 960px) 940px, (min-width: 1200px) 1088px, 100vw",
       srcSet: item.entity.media.file.imag_test.gatsbyImageData.images.sources[0].srcSet
     }
   })
@@ -38,8 +39,9 @@ export const fragment = graphql`
               imag_test: childImageSharp {
                 gatsbyImageData(
                   width: 1088,
-                  height: 720,
+                  height: 740,
                   quality: 100,
+                  sizes: "(min-width: 960px) 940px, (min-width: 1200px) 1088px, 100vw"
                   transformOptions: {
                     cropFocus: CENTER
                   }
