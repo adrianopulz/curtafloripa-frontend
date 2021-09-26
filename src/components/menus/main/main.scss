@@ -1,8 +1,8 @@
 @import "../../../assets/scss/media-queries";
 
 #hamburger {
-  width: 27px;
-  height: 19px;
+  width: 30px;
+  height: 23px;
   border: 0;
   background: none;
   border-top: 3px solid $thirdColor;
@@ -17,7 +17,7 @@
   text-indent: -99999999999%;
 
   i {
-    width: 27px;
+    width: 30px;
     height: 3px;
     background: $thirdColor;
     margin-top: 0;
@@ -60,6 +60,10 @@
   left: 0;
   height: 100vh;
   z-index: 9999;
+
+  .dark-mode & {
+    background: $darkColor;
+  }
 
   &.opened {
     display: block;

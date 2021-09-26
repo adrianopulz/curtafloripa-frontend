@@ -14,14 +14,14 @@ const ImageGallery = data => {
       originalAlt: item.attributes.alt,
       thumbnailAlt: item.attributes.alt,
       sizes: "(min-width: 960px) 940px, (min-width: 1200px) 1088px, 100vw",
-      srcSet: item.entity.media.file.imag_test.gatsbyImageData.images.sources[0].srcSet
+      srcSet: item.entity.media.file.image.gatsbyImageData.images.sources[0].srcSet
     }
   })
 
   return (
     <section className={"image-gallery-component"}>
       <h2>Galeria de imagens</h2>
-      <Gallery items={images} showFullscreenButton={false} />
+      <Gallery items={images} showFullscreenButton={false} lazyLoad={true} />
     </section>
   )
 }
@@ -36,11 +36,12 @@ export const fragment = graphql`
         entity: relationships {
           media: field_media_image {
             file: localFile {
-              imag_test: childImageSharp {
+              image: childImageSharp {
                 gatsbyImageData(
                   width: 1088,
                   height: 740,
                   quality: 100,
+                  layout: CONSTRAINED,
                   sizes: "(min-width: 960px) 940px, (min-width: 1200px) 1088px, 100vw"
                   transformOptions: {
                     cropFocus: CENTER

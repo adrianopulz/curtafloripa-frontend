@@ -15,9 +15,10 @@
 
     @include mediumUp {
       padding: 0 15px;
-      max-width: 43%;
-      flex: 0 0 43%;
+      width: 43%;
+      max-width: 420px;
       display: block;
+      flex: 2;
     }
   }
 
@@ -26,8 +27,7 @@
 
     @include mediumUp {
       display: flex;
-      max-width: 57%;
-      flex: 0 0 57%;
+      flex: 1;
       justify-content: center;
       flex-direction: column;
       padding: 0 15px;

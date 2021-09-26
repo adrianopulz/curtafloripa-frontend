@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import useDarkMode from 'use-dark-mode';
-import DarkModeToggle from "react-dark-mode-toggle";
+import DarkModeToggle from "../../dark-mode-toggle";
 
 import "../menu.scss"
 import "./main.scss"
@@ -20,12 +20,10 @@ const MainMenu = () => {
       <DarkModeToggle
         onChange={darkMode.toggle}
         checked={darkMode.value}
-        size={60}
+        size={70}
         className="dark-mode-toggle"
       />
-      <button id={"hamburger"} onClick={() => setMenuStatus(true)}>
-        <i>MENU</i>
-      </button>
+      <button id={"hamburger"} onClick={() => setMenuStatus(true)}><i>MENU</i></button>
       <nav className={classes} id={"main-menu"}>
         <button id={"closeMenu"} onClick={() => setMenuStatus(false)}>
           X
