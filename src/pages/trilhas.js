@@ -21,7 +21,6 @@ const Trails = ({ data }) => {
       image: (node.relationships.field_single_image) ? node.relationships.field_single_image : null
     }
   })
-  
 
   // The static page hero.
   const heroImage = (

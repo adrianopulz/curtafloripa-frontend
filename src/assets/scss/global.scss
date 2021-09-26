@@ -84,6 +84,12 @@ a {
   }
 }
 
+.dark-mode #header-home {
+  a {
+    color: $thirdColor;
+  }
+}
+
 .container {
   @include center;
 }
