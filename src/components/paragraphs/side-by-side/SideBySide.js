@@ -43,7 +43,7 @@ export const fragment = graphql`
           media: field_media_image {
             file: localFile {
               childImageSharp {
-                gatsbyImageData(quality: 100, layout: CONSTRAINED)
+                gatsbyImageData(quality: 100, layout: CONSTRAINED, width: 452)
               }
             }
           }
