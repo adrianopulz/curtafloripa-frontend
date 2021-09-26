@@ -10,18 +10,17 @@ const ImageGallery = data => {
 
   images = items.map((item) => {
     return {
-      original: item.entity.media.file.image[0].resize.src,
       thumbnail: item.entity.media.file.thumb[0].fixed.src,
-      fullscreen: item.entity.media.file.full[0].resize.src,
       originalAlt: item.attributes.alt,
-      thumbnailAlt: item.attributes.alt
+      thumbnailAlt: item.attributes.alt,
+      srcSet: item.entity.media.file.imag_test.gatsbyImageData.images.sources[0].srcSet
     }
   })
 
   return (
     <section className={"image-gallery-component"}>
       <h2>Galeria de imagens</h2>
-      <Gallery items={images} />
+      <Gallery items={images} showFullscreenButton={false} />
     </section>
   )
 }
@@ -36,22 +35,18 @@ export const fragment = graphql`
         entity: relationships {
           media: field_media_image {
             file: localFile {
+              imag_test: childImageSharp {
+                gatsbyImageData(
+                  width: 1088,
+                  height: 720,
+                  quality: 100,
+                  transformOptions: {
+                    cropFocus: CENTER
+                  }
+                )
+              }
               thumb: childrenImageSharp {
-                fixed(height: 188, width: 250, quality: 80, cropFocus: CENTER) {
-                  src
-                  width
-                  height
-                }
-              }
-              image: childrenImageSharp {
-                resize(quality: 100, height: 816) {
-                  src
-                  width
-                  height
-                }
-              }
-              full: childrenImageSharp {
-                resize(quality: 100, width: 1920) {
+                fixed(height: 120, width: 160, quality: 80, cropFocus: CENTER, toFormat: WEBP) {
                   src
                   width
                   height
