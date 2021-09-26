@@ -26,17 +26,19 @@ const TrailTeaser = ({node}) => {
     return <GatsbyImage alt={alt} image={img} />
   }
 
+  const label = `Veja o mada da trilha: ${node.title}`;
+
   return (
     <article className="trail-teaser">
       <div className="col-image">
-        <a href={node.link} target="_blank" className="image" rel="noreferrer">
+        <a href={node.link} target="_blank" className="image" rel="noreferrer" aria-label={label}>
           {image()}
         </a>
       </div>
       <div className="col-content">
         <h2>{ node.title }</h2>
         <div className="description" dangerouslySetInnerHTML={{ __html: node.body }} />
-        { node.link ? <ExternalLink url={node.link} value="Ver no mapa" btn={true} />  : '' }
+        { node.link ? <ExternalLink url={node.link} value="Ver no mapa" btn={true} label={label} />  : '' }
       </div>
     </article>
   )

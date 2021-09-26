@@ -28,7 +28,7 @@ const Card = ({ node }) => {
 
   return (
     <article className="cards-item">
-      <Link to={node.path} className="image">
+      <Link to={node.path} aria-label={`Veja mais sobre a praia ${node.title}`} className="image">
         {image()}
       </Link>
       <h2>
