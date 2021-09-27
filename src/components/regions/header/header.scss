@@ -23,6 +23,8 @@
 
   .dark-mode-toggle {
     margin-right: 60px;
+    height: 48px!important;
+    padding: 8px 0!important;
 
     @include smallUp {
       margin-right: 0;

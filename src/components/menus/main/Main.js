@@ -23,7 +23,7 @@ const MainMenu = () => {
         size={70}
         className="dark-mode-toggle"
       />
-      <button id={"hamburger"} onClick={() => setMenuStatus(true)}><i>MENU</i></button>
+      <button id={"hamburger"} onClick={() => setMenuStatus(true)}><span><i>MENU</i></span></button>
       <nav className={classes} id={"main-menu"}>
         <button id={"closeMenu"} onClick={() => setMenuStatus(false)}>
           X
