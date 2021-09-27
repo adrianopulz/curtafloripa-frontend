@@ -103,7 +103,7 @@ const Beaches = ({ data }) => {
 
 export const query = graphql`
   query BeachesQuery {
-    allNodeBeach(filter: { status: { eq: true } }) {
+    allNodeBeach(sort: {order: ASC, fields: title}, filter: {status: {eq: true}}) {
       edges {
         node {
           id

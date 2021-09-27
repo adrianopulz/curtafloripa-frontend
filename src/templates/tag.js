@@ -78,6 +78,7 @@ export const query = graphql`
       name
     }
     allNodeBeach(
+      sort: {order: ASC, fields: title},
       filter: {
         status: { eq: true }
         relationships: { field_tags: { elemMatch: { id: { eq: $id } } } }
