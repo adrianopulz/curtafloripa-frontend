@@ -76,6 +76,10 @@
     background: none;
     display: block;
     margin-right: 30px;
+
+    .dark-mode & {
+      background: none;
+    }
   }
 
   @include mediumUp {
