@@ -1,3 +1,5 @@
+@import "../../../assets/scss/media-queries";
+
 .image-gallery-component {
   margin: 60px 0;
 
@@ -16,4 +18,25 @@
       max-height: 816px;
     }
   }
+}
+
+.image-gallery-left-nav .image-gallery-svg,
+.image-gallery-right-nav .image-gallery-svg {
+  height: 68px;
+  width: 48px;
+
+  @include mediumUp {
+    height: 110px;
+    width: 70px;
+  }
+}
+
+.image-gallery-fullscreen-button, .image-gallery-play-button {
+  padding: 12px;
+}
+
+.image-gallery-fullscreen-button .image-gallery-svg,
+.image-gallery-play-button .image-gallery-svg {
+  width: 26px;
+  height: 26px;
 }
