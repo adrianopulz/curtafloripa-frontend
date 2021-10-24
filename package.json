@@ -17,6 +17,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@react-hook/intersection-observer": "^3.1.1",
     "@splidejs/react-splide": "^0.4.4",
     "gatsby": "^3.11.1",
     "gatsby-plugin-gatsby-cloud": "^2.11.0",
