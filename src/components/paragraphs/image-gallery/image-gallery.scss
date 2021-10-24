@@ -6,6 +6,15 @@
   h2 {
     margin: 0 0 20px 0;
   }
+
+  .gallery-inner {
+    width: 100%;
+
+    #gallery-placeholder {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 .image-gallery-swipe {

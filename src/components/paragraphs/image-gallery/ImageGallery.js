@@ -1,6 +1,9 @@
 import React from "react"
+import { useRef } from 'react'
+import useIntersectionObserver from '@react-hook/intersection-observer'
 import { graphql } from "gatsby"
 import Gallery from 'react-image-gallery';
+import ImageGalleryPlaceholder from "../../ImageGalleryPlaceholder";
 import "react-image-gallery/styles/css/image-gallery.css"
 import "./image-gallery.scss"
 
@@ -8,8 +11,14 @@ const ImageGallery = data => {
   const items = data.node.results.items
   let images = []
 
+  const containerRef = useRef()
+  const lockRef = useRef(false)
+  const { isIntersecting } = useIntersectionObserver(containerRef)
+  if (isIntersecting) {
+    lockRef.current = true
+  }
+
   images = items.map((item) => {
-    console.log(item.entity.media.file.image.fluid);
     return {
       thumbnail: item.entity.media.file.thumb[0].fixed.src,
       originalAlt: item.attributes.alt,
@@ -20,9 +29,13 @@ const ImageGallery = data => {
   })
 
   return (
-    <section className={"image-gallery-component"}>
+    <section className={"image-gallery-component"} ref={containerRef}>
       <h2>Galeria de imagens</h2>
-      <Gallery items={images} showFullscreenButton={false} lazyLoad={true} />
+      <div className={"gallery-inner"}>
+        { lockRef.current ? (
+          <Gallery items={images} showFullscreenButton={false} lazyLoad={true} />
+        ) : <ImageGalleryPlaceholder /> }
+      </div>
     </section>
   )
 }
