@@ -9,12 +9,13 @@ const ImageGallery = data => {
   let images = []
 
   images = items.map((item) => {
+    console.log(item.entity.media.file.image.fluid);
     return {
       thumbnail: item.entity.media.file.thumb[0].fixed.src,
       originalAlt: item.attributes.alt,
       thumbnailAlt: item.attributes.alt,
-      sizes: "(min-width: 960px) 940px, (min-width: 1200px) 1088px, 100vw",
-      srcSet: item.entity.media.file.image.gatsbyImageData.images.sources[0].srcSet
+      sizes: item.entity.media.file.image.fluid.sizes,
+      srcSet: item.entity.media.file.image.fluid.srcSet
     }
   })
 
@@ -37,16 +38,17 @@ export const fragment = graphql`
           media: field_media_image {
             file: localFile {
               image: childImageSharp {
-                gatsbyImageData(
-                  width: 1088,
-                  height: 740,
-                  quality: 100,
-                  layout: CONSTRAINED,
-                  sizes: "(min-width: 960px) 940px, (min-width: 1200px) 1088px, 100vw"
-                  transformOptions: {
-                    cropFocus: CENTER
-                  }
-                )
+                fluid(
+                  srcSetBreakpoints: [750, 940, 1088]
+                  sizes: "(min-width: 978px) 940px, (min-width: 1200px) 1088px, 375px"
+                  maxWidth: 1088
+                  cropFocus: CENTER
+                  maxHeight: 740
+                ) {
+                  sizes
+                  srcSet
+                  src
+                }
               }
               thumb: childrenImageSharp {
                 fixed(height: 120, width: 160, quality: 80, cropFocus: CENTER, toFormat: WEBP) {

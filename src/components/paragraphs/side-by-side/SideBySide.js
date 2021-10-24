@@ -44,9 +44,11 @@ export const fragment = graphql`
             file: localFile {
               childImageSharp {
                 gatsbyImageData(
-                  quality: 100,
-                  layout: CONSTRAINED,
+                  breakpoints: [375, 750, 840]
+                  sizes: "(min-width: 978px) 420px, 375px"
+                  width: 420
                   aspectRatio: 1.12
+                  placeholder: BLURRED
                 )
               }
             }
