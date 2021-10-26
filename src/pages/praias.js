@@ -79,7 +79,7 @@ const Beaches = ({ data }) => {
 
   return (
     <>
-      <Seo title="Praias" article={false} />
+      <Seo title="Curta Floripa - Praias" article={false} />
       <Header />
       <main id="main" className="beaches-page">
         <TitleHero title="Praias" image={heroImage} />

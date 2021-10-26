@@ -24,7 +24,7 @@ module.exports = {
     titleTemplate: "%s | Curta Floripa",
     description: "Tudo que você precisa saber sobre a Ilha da Magia. As melhores paraias e trilhas estão aqui, encontre o que procura de forma fácil e organize suas férias para não perder nada.",
     url: domain[activeEnv],
-    image: "/images/default.jpg",
+    image: "/default.jpg",
     twitterUsername: "@adrianopulz",
     author: `@adrianopulz`,
   },

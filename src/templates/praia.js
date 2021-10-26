@@ -60,7 +60,7 @@ const Beach = ({ data }) => {
 
   const seoImage = () => {
     if (!node.relationships.field_single_image) {
-      return '../assets/images/no-image.png'
+      return '../assets/images/beaches-hero.jpg'
     }
     return node.relationships.field_single_image.relationships.field_media_image.localFile.childImageSharp.resize.src
   }
@@ -68,7 +68,7 @@ const Beach = ({ data }) => {
   return (
     <>
       <Seo
-        title={node.title}
+        title={`Curta Floripa - ${node.title}`}
         description={node.seo_desc}
         image={seoImage()}
         article={true}
