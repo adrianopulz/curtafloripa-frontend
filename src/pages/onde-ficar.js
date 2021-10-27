@@ -55,7 +55,7 @@ const OndeFicarPage = () => {
       <Seo title="Onde ficar" article={false} />
       <Header />
       <main id="main" className="ondeficar-page">
-        <TitleHero title="Curta Floripa - Onde Ficar" image={heroImage} />
+        <TitleHero title="Onde Ficar" image={heroImage} />
         <section className="main-content">
           <div className={"container"}>
             <Breadcrumb links={breadcrumbLinks} />

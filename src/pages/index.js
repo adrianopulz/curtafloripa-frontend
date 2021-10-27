@@ -12,7 +12,7 @@ const Home = ({ data }) => {
 
   return (
     <>
-      <Seo title="Curta Floripa - Home" article={false} bodyClass={"home-page"} />
+      <Seo title="Home" article={false} bodyClass={"home-page"} />
       <HeaderHome />
       <main id={"main"} className="home-page">
         {paragraphs}

@@ -42,7 +42,7 @@ const Trails = ({ data }) => {
 
   return (
     <>
-      <Seo title="Curta Floripa - Trilhas" article={false} />
+      <Seo title="Trilhas" article={false} />
       <Header />
       <main id="main" className="trails-page">
         <TitleHero title="Trilhas" image={heroImage} />

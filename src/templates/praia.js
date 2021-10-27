@@ -68,7 +68,7 @@ const Beach = ({ data }) => {
   return (
     <>
       <Seo
-        title={`Curta Floripa - ${node.title}`}
+        title={node.title}
         description={node.seo_desc}
         image={seoImage()}
         article={true}
