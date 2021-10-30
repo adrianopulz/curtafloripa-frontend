@@ -33,6 +33,9 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-webpack-bundle-analyser-v2`,
+    "gatsby-plugin-loadable-components-ssr",
+    `gatsby-plugin-preact`,
     {
       resolve: 'gatsby-plugin-use-dark-mode',
       options: {

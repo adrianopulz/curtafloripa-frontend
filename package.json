@@ -17,13 +17,16 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@loadable/component": "^5.15.0",
     "@react-hook/intersection-observer": "^3.1.1",
     "@splidejs/react-splide": "^0.4.4",
     "gatsby": "^3.11.1",
     "gatsby-plugin-gatsby-cloud": "^2.11.0",
     "gatsby-plugin-image": "^1.11.0",
+    "gatsby-plugin-loadable-components-ssr": "^4.0.0",
     "gatsby-plugin-manifest": "^3.11.0",
     "gatsby-plugin-offline": "^4.11.0",
+    "gatsby-plugin-preact": "^6.0.0",
     "gatsby-plugin-react-helmet": "^4.11.0",
     "gatsby-plugin-sass": "^4.2.0",
     "gatsby-plugin-sharp": "^3.11.0",
@@ -32,6 +35,8 @@
     "gatsby-source-drupal": "^4.2.0",
     "gatsby-source-filesystem": "^3.11.0",
     "gatsby-transformer-sharp": "^3.11.0",
+    "preact": "^10.5.15",
+    "preact-render-to-string": "^5.1.19",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dark-mode-toggle": "^0.2.0",
@@ -42,6 +47,7 @@
     "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.25",
     "prettier": "2.3.2"
   },
   "repository": {
