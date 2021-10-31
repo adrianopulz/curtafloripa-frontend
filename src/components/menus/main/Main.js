@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import useDarkMode from 'use-dark-mode';
-import DarkModeToggle from "../../dark-mode-toggle";
+import { DarkModeToggler } from 'react-darkmode-toggler'
 
 import "../menu.scss"
 import "./main.scss"
@@ -17,12 +17,12 @@ const MainMenu = () => {
 
   return (
     <div className="navigation">
-      <DarkModeToggle
-        onChange={darkMode.toggle}
-        checked={darkMode.value}
-        size={70}
-        className="dark-mode-toggle"
-      />
+      <div className="dark-mode-toggle"> 
+        <DarkModeToggler
+          onClick={darkMode.toggle}
+          isDark={darkMode.value ? 'dark' : 'light'}
+        />
+      </div>
       <button id={"hamburger"} onClick={() => setMenuStatus(true)} aria-label="Menu"><span><i>MENU</i></span></button>
       <nav className={classes} id={"main-menu"}>
         <button id={"closeMenu"} onClick={() => setMenuStatus(false)}>X</button>

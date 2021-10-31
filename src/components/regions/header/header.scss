@@ -29,6 +29,20 @@
     @include smallUp {
       margin-right: 0;
     }
+
+    ._5CjZJ {
+      margin: 1px 3px;
+    }
+
+    ._aZqFb {
+      top: -1px;
+      left: 5.3px;
+    }
+
+    body.dark-mode & > div {
+      background: #333;
+      border-color: #FFF;
+    }
   }
 }
 
