@@ -31,7 +31,11 @@
     }
 
     ._5CjZJ {
-      margin: 1px 3px;
+      margin: 1px;
+      body.dark-mode & {
+        transform: translateX(33px);
+      }
+      
     }
 
     ._aZqFb {
