@@ -18,7 +18,27 @@
 }
 
 .image-gallery-swipe {
-  background: #444;
+  .image-gallery-slides {
+    width: 100%;
+    background: #444;
+    min-height: 290px;
+
+    @include smallUp {
+      min-height: 540px;
+    }
+
+    @include mediumUp {
+      min-height: 705px;
+    }
+
+    @include largeUp {
+      min-height: 816px;
+    }
+
+    img {
+      height: auto;
+    }
+  }
 }
 
 .image-gallery-content:not(.fullscreen) {
