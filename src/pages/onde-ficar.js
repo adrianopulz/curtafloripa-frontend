@@ -17,6 +17,10 @@ const OndeFicarPage = () => {
       placeholder="blurred"
       className="cover-image"
       objectFit="cover"
+      layout={"constrained"}
+      sizes={"(min-width: 1920px) 1920px, 100w"}
+      breakpoints={[750, 1024, 1280, 1440, 1920]}
+      width={1920}
       quality={100}
     />
   )
