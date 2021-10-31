@@ -71,7 +71,9 @@ module.exports = {
             },
           ],
         },
-        usePreload: false,
+        useMinify: true,
+        usePreload: true,
+        usePreconnect: true
       },
     },
     {
