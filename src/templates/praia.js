@@ -45,8 +45,7 @@ const Beach = ({ data }) => {
 
     const alt = node.relationships.field_single_image.field_media_image.alt
     const img = getImage(
-      node.relationships.field_single_image.relationships.field_media_image
-        .localFile.childImageSharp
+      node.relationships.field_single_image.relationships.field_media_image.localFile.image
     )
     return (
       <GatsbyImage
@@ -62,7 +61,7 @@ const Beach = ({ data }) => {
     if (!node.relationships.field_single_image) {
       return '../assets/images/beaches-hero.jpg'
     }
-    return node.relationships.field_single_image.relationships.field_media_image.localFile.childImageSharp.resize.src
+    return node.relationships.field_single_image.relationships.field_media_image.localFile.seo.resize.src
   }
 
   return (
@@ -118,8 +117,17 @@ export const query = graphql`
           relationships {
             field_media_image {
               localFile {
-                childImageSharp {
-                  gatsbyImageData(layout: FULL_WIDTH, quality: 100)
+                image: childImageSharp {
+                  gatsbyImageData(
+                    breakpoints: [375, 750, 960, 1200, 1440, 1920]
+                    layout: CONSTRAINED
+                    placeholder: BLURRED
+                    sizes: "100w"
+                    formats: WEBP
+                    width: 1920
+                  )
+                }
+                seo: childImageSharp {
                   resize(quality: 100, width: 720) {
                     src
                   }

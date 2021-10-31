@@ -21,18 +21,18 @@
   .image-gallery-slides {
     width: 100%;
     background: #444;
-    min-height: 290px;
+    min-height: 200px;
 
     @include smallUp {
-      min-height: 540px;
+      min-height: 500px;
     }
 
     @include mediumUp {
-      min-height: 705px;
+      min-height: 690px;
     }
 
     @include largeUp {
-      min-height: 816px;
+      min-height: 800px;
     }
 
     img {
