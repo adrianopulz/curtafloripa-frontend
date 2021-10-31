@@ -32,8 +32,11 @@
 
     ._5CjZJ {
       margin: 1px;
+      background: $darkColor;
+
       body.dark-mode & {
         transform: translateX(33px);
+        background: $whiteColor;
       }
       
     }
@@ -43,9 +46,15 @@
       left: 5.3px;
     }
 
+
+    & > div {
+      background: $whiteColor;
+      border-color: $darkColor;
+    }
+
     body.dark-mode & > div {
-      background: #333;
-      border-color: #FFF;
+      background: $darkColor;
+      border-color: $whiteColor;
     }
   }
 }

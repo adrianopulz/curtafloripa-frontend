@@ -67,13 +67,13 @@ module.exports = {
             },
             {
               family: "Montserrat",
-              variants: ["300", "400", "500", "600", "700"],
+              variants: ["400", "600", "700"],
             },
           ],
         },
         useMinify: true,
         usePreload: true,
-        usePreconnect: true
+        usePreconnect: false,
       },
     },
     {
